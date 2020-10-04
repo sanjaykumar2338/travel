@@ -1,0 +1,26 @@
+<%- include('./../header') %>
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <h1 class="h3 mb-4 text-gray-800">Add Country</h1>
+		   <form action="./savecountry" method="POST">
+			  
+			  <div class="form-group">
+				<label for="exampleInputPassword1">Country Name</label>
+				<input type="text" class="form-control" id="name" required placeholder="Country Name" name="name">
+			  </div>
+			  
+			  
+			  
+			  <button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+	  
+<%- include('./../footer') %>

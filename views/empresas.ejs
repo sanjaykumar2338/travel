@@ -1,0 +1,297 @@
+<%- include("partials/header") -%>
+
+<style>
+  .empresasWorkSearch{margin-top: -55px;}
+  .searchwork select{width: 260px;}
+  .searchwork{margin-left: 70px;}
+  .page_navigation{position: absolute;padding-left: 15%;margin-top: 1200px; }
+  footer{margin-top: 30px;}
+  @media all and  (max-width: 1100px) {
+    #cantao{width: 55%;}
+    .searchwork select{width: 55%;margin-right: -100px; }}
+   @media all and  (max-width: 950px) {
+     main {display: block;}
+     .searchwork{display: block;}
+     .empresasMain{display: block; margin: auto;}
+     .empresasWorkSearch{margin-top: 100px;}
+     .sideBar{display: block;margin:auto;}
+     main select{ margin: auto;}
+     .searchwork select{margin: auto;width: 50%; }
+     .searchwork input{margin: auto; }
+     .empresasWorkSearch { display: none;}
+     .empresasShow{ display: block;margin-top: 100px; }
+    #cantao{width: 50%;}
+     
+     }
+     @media all and  (max-width: 750px) {
+      .searchwork select{margin: auto;margin-bottom: 5px;width: 95%;margin-left: -60px; }
+      #cantao{width: 95%;}
+      .searchwork input{margin: auto; margin-left: -5px; }
+      .empresasShow .card{margin-right:-150px; margin-bottom: -100px;}
+      .page_navigation{margin-top: 3500px; margin-left: -180px; padding-left: -60px;}
+      .footer{ height: 230px;margin-top: -60px; 
+  line-height: 15px;}      
+  .footer li{
+    padding-bottom: 20px;}}
+</style>
+<main>
+<form class="searchwork" id="searchworkEmpresas" name=-"search" method="get"  >
+     
+      
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <%  if (distrito){ %>
+   <div class="form__group">
+     <select type="text" class="form__input" id="cantao" name="distrito" placeholder="&#xf041; Cantão "  style="font-family:Arial, FontAwesome"   >
+      <option value="0" >Escolhe a localização da empresa</option> 
+      <%  for (let index in distrito){ %>
+         <% var selected = ( distrito[index].id == req.query.distrito ) ? "selected" : ""; %>	
+        <option <%=selected %> value="<%= distrito[index].id %>"><%= distrito[index].distrito %></option>
+      <% } %>  
+    </select>
+    <%  } %>
+
+
+
+     <%  if (actividade){ %>	
+   </div>
+   <div class="form__group">
+       <select type="text" name="actividade" class="form__input" id="name" placeholder="Actividade"  >
+        <option value="0">Escolhe a categoria da empresa</option> 
+        <%  for (let index in actividade){ %>
+          <% var selected = ( actividade[index].id == req.query.actividade ) ? "selected" : ""; %>	
+          <option <%=selected %> value="<%= actividade[index].id %>"><%= actividade[index].actividade%></option>
+        <% } %>  
+      
+      </select>
+   
+   </div>
+   <%  } %>
+
+
+
+
+
+  
+   <div class="form__group" id="btnsearch">
+       <input  type="submit" name="search" value="&#xF002; Procurar" class="form__input" id="name" placeholder="&#xF002; Search" required=""style="font-family:Arial, FontAwesome" />
+
+     </div>
+     
+   </form>
+
+<div class="empresasMain">
+
+<div class="sideBar">
+ 
+ <div class="empresasWorkSearch" style=" background-color: rgb(85, 83, 83); height: 350px; padding-top: 10px; width: 96%;">
+  
+  <form method="GET" name="search_form" action="./empresas">
+   <div class="workSearchTitle">
+     
+     <h3>Transportes </h3>
+     <p>Portugal <i class="fas fa-arrows-alt-h"></i>   Suiça</p>
+     
+   </div>
+
+   <div class="worksearch2">
+     
+     <div class="form__group">
+       <select type="text"    class="form__input select_country"  id="pais2" placeholder="Filtrar por"  >
+        <option value="1" style="display: none;">Transportes...</option>
+       
+           
+       </select>
+      <h5 style="color: white;line-height: 0px;text-align: center;width: 80%">entre</h5>
+     </div>
+     
+     <div class="inflex">
+     <div class="form__group">
+     <select type="text"    class="form__input" name="from" id="from_country_start" placeholder="Filtrar por" required="" >
+        
+     </select>
+     <h5 style="color: white;line-height: 0px; text-align: center;width: 50%;">e</h5>
+     </div>
+     <div class="form__group">
+     <select type="text"    class="form__input" name="to" id="to_country_start" placeholder="Filtrar por" required="" >
+       
+     </select>
+     </div>
+     </div>
+    
+     <div class="form__group" id="btnsearch1">
+       <input type="submit" value="&#xF002; Procurar" class="form__input" id="name" placeholder=" Search" required=""style="font-family:Arial, FontAwesome" />  
+		
+     </div>
+   </div>
+   
+   </form>
+   
+ </div>   
+   
+ 
+
+ <br>
+ 
+ <div class="sidebarpublicidade" style="margin-bottom: 15px;">
+  <img style="width: 98%;height: 240px;" src="/assets/img/Rebeka_Collier54@yahoo.com.jpeg"/>
+  <h2 style="position: absolute; margin-top: -250px;width: 200px;color: white;margin-left: 50px;">Espaço para publicidade</h2>
+</div>
+  
+
+
+<section id="sidebarartigos" class="cards-wrapper">
+  <% if (sidenews.length > 0) {%>
+    <% sidenews.forEach((sidenew, index) => { %>
+  
+ 
+   <div class="sidenewcard">
+    <a href="./conteudo?id=<%= sidenew.id %>"> <div class="imgside">
+       <img src="/uploads/blog_images/<%= sidenew.image %>" alt="">
+     </div>
+     <div class="date"><%= sidenew.created_at.toDateString() %></div>
+     <p  ><%= sidenew.blog_title %></p>
+     <div class="tag" style="font-weight: 600px;"><h4>Artigos</h4></div>
+
+   </div></a>
+  
+    <style>
+      .sidenewcard{
+        position: relative;
+      }
+      .sidenewcard:hover{
+        filter: brightness(150%);
+        opacity: 0.9;
+      }
+      .imgside img{
+        height: 250px;
+        width: 97%;
+        position: relative;
+        filter: brightness(50%);
+      }
+      .date{
+        position:absolute;
+        top: 8px;
+         right: 16px;
+         color:white;
+         font-size: 12px;
+      }
+                         
+         .sidenewcard p{
+           color:white;
+           position: absolute;
+           top: 35%;
+           left: 5%;
+          
+          font-size: 20px;
+         }
+         .tag{
+          color:white;
+           position: absolute;
+           bottom: 8px;
+               left: 16px;
+               background-color: grey;
+               padding:13px;
+               border-radius:5px;
+               font-weight: 600px;
+               font-family: 'Open Sans', sans-serif;
+               line-height: 0px;
+               padding-top: 0px;
+               padding-bottom: 1px;
+              
+               
+
+         }
+    </style>
+  <% }) %>
+
+  <!-- https://images.unsplash.com/photo-1520839090488-4a6c211e2f94?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=38951b8650067840307cba514b554ba5&auto=format&fit=crop&w=1350&q=80 -->
+</section>
+
+<% } else { %>
+  <p class="text-center">Não encontramos noticias <a href="/empresas" >Aqui</a> para voltar atrás.</p>
+<% } %>
+</div>
+<style>
+.table-wrapper {
+   margin-top: 50px;
+}
+
+.player-img {
+   width: 40px;
+   height: 40px;
+}
+
+.add-player-form {
+   margin-top: 50px;
+}
+</style>
+
+<div class="empresasShow" id="grid">
+  
+        <% if (players!=undefined) {%>
+              <% if (players) {%>
+                <% players.forEach((player, index) => { %>
+
+                  
+          
+
+                <article class="card"  style="position: static; margin-top: 150px;">
+				
+                    <div class="thumb"  ><img src="/assets/img/<%= player.image %>" >
+					<div class="rating centered_index_page">
+					    <% if(player.rating) { %>
+						<% for(i=0;i<parseInt(player.rating);i++) { %>
+						<span style="color:gold">☆</span>
+						<% } } else { %>
+						<% for(i=0;i<3;i++) { %>
+						<span style="color:gold">☆</span>
+						<% } } %>
+						</div>
+					</div>
+                    <div class="infos" style="background-color: white;">
+                      <h2 class="title" style="color: rgb(66, 66, 66);" id="title"><%= player.nome_empresa %><span class="flag" ></span></h2>
+                      <h3 class="date" id="date"><%= player.distrito_name %></h3>
+                      <p class="txt" style="color: rgb(70, 69, 69);">
+                        <td><%= player.rua %></td><br>
+                        <td><%= player.codpos %></td><br>
+                        <td><%= player.telefone %></td><br>
+                        <td><%= player.email %></td>
+                      </p>
+                      <h3 class="details"> <a href="/empresaProfile/<%= player.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-success">Ver</a></h3>
+                    </div>
+                  </article>
+
+                  <style>
+                   .infos #title{padding-top:15px; letter-spacing: 1px;margin-left: -10px;}
+                   .infos #date{top: -3px;}
+                   #page_navigation{ grid-column-start: 1;grid-column-end: 4; padding-left: 20%;}
+                   @media all and  (max-width: 750px) { #page_navigation{margin-left: -155px;margin-top:5000px;padding-left: 0px;margin-right: 320px;width: 300px;position: relative;}}
+                  </style>
+
+
+                
+                    <% }) %>
+                
+           
+        <% }} else { %>
+            <p class="text-center">Não encontramos empresas <a href="/index" >Aqui</a> para voltar atrás.</p>
+        <% } %>
+        
+        <input type='hidden' id='current_page' />
+        <input type='hidden' id='show_per_page' />
+        <div id='page_navigation' ></div>       
+    
+          
+    </div>
+  
+  
+    
+
+  
+<script src="/resources/js/review_pagination.js"></script>
+  
+
+</main>
+<% include footer.ejs %> 
+
+  

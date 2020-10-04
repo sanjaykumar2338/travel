@@ -1,0 +1,31 @@
+<%- include("partials/header") -%>
+
+   
+
+<% if (players.length > 0) {%>
+            
+  <% players.forEach((player, index) => { %>
+    <div class="empresasShow" >
+    <article class="card"  style="position: static;">
+      <div class="thumb"  ><img src="/assets/img/<%= player.image %>" ></div>
+      <div class="infos">
+        <h2 class="title"><%= player.nome_empresa %><span class="flag" ></span></h2>
+        <h3 class="date"><%= player.distrito %></h3>
+        <p class="txt">
+          <td><%= player.descricao %></td>
+          <td><%= player.email %></td>
+        </p>
+        <h3 class="details"> <a href="/edit/<%= player.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-success">Edit</a>
+          <a href="/delete/<%= player.id %>" class="btn btn-sm btn-danger">Delete</a></h3>
+      </div>
+    </article>
+    <% }) %>
+                
+           
+    <% } else { %>
+        <p class="text-center">No players found. Go <a href="/add" >here</a> to add players.</p>
+    <% } %>
+
+    </div>
+    
+<% include footer.ejs %> 

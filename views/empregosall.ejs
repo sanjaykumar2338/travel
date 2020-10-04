@@ -1,0 +1,299 @@
+<% include partials/header.ejs %>
+<style>
+   footer{margin-top: 20px;}
+  .sobrenosMenu{width: 100%;}
+  .sobrenosMenu img{width: 600px;height: 300px;}  
+   @media all and  (max-width: 750px) {
+    .sideBar{display: none;}
+    .caixa{width: 94%;padding-bottom: 20px;}
+   footer{margin-top: 10px;min-width: 100%;}
+      .footer{ height: 220px; padding-right: 20px;
+  line-height: 15px; min-width: 100%;}      
+  .footer li{
+    padding-bottom: 20px;}    
+    .sobrenosMenu img{width: 96%;position: relative;  }  
+   
+    .sketchy{margin-bottom: 10px;}
+    .sobrenosMenu{height: 105%;}
+   
+    
+   
+  
+  }
+</style>
+
+<div class="empresasMain">
+<div class="sideBar" style="margin-top: 10px;">
+    <div class="empresasWorkSearch1" style=" height: 130px; padding-top: 10px; width: 98%; margin-left: 0; margin-bottom: 0px; margin-top: 50px; " >
+       <div class="workSearchTitle">
+         <a href="/empresas">
+         <h3>Transportes </h3>
+         <p>Portugal <i class="fas fa-arrows-alt-h"></i>   Suiça</p>
+         <h1><i class="fas fa-search"></i></h1>
+       </a>
+       </div>
+       
+     </div>  
+       
+     
+    
+     <br>
+     
+     <div class="sidebarpublicidade" style="margin-bottom: 5px;">
+      <img style="width: 98%;height: 240px;" src="/assets/img/Rebeka_Collier54@yahoo.com.jpeg"/>
+      <h2 style="position: absolute; margin-top: -250px;width: 200px;color: white;margin-left: 50px;">Espaço para publicidade</h2>
+    </div>
+  
+    <section id="sidebarartigos" class="cards-wrapper">
+      <% if (sidenews.length > 0) {%>
+        <% sidenews.forEach((sidenew, index) => { %>
+      
+     
+       <div class="sidenewcard">
+        <a href="./conteudo?id=<%= sidenew.id %>"> <div class="imgside">
+           <img src="/uploads/blog_images/<%= sidenew.image %>" alt="">
+         </div>
+         <div class="date"><%= sidenew.created_at.toDateString() %></div>
+         <p  ><%= sidenew.blog_title %></p>
+         <div class="tag" style="font-weight: 600px;"><h4>Artigos</h4></div>
+  
+       </div></a>
+      
+        <style>
+          .sidenewcard{
+            position: relative;
+          }
+          .sidenewcard:hover{
+            filter: brightness(150%);
+            opacity: 0.9;
+          }
+          .imgside img{
+            height: 250px;
+            width: 97%;
+            position: relative;
+            filter: brightness(50%);
+          }
+          .sidenewcard .date{
+            position:absolute;
+            top: 8px;
+             right: 16px;
+             color:white;
+             font-size: 12px;
+          }
+                             
+             .sidenewcard p{
+               color:white;
+               position: absolute;
+               top: 35%;
+               left: 5%;
+              
+              font-size: 20px;
+             }
+             .sidenewcard .tag{
+              color:white;
+               position: absolute;
+               bottom: 8px;
+                   left: 16px;
+                   background-color: grey;
+                   padding:13px;
+                   border-radius:5px;
+                   font-weight: 600px;
+                   font-family: 'Open Sans', sans-serif;
+                   line-height: 0px;
+                   padding-top: 0px;
+                   padding-bottom: 1px;
+                  
+                   
+  
+             }
+        </style>
+      <% }) %>
+  
+      <!-- https://images.unsplash.com/photo-1520839090488-4a6c211e2f94?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=38951b8650067840307cba514b554ba5&auto=format&fit=crop&w=1350&q=80 -->
+    </section>
+    
+    <% } else { %>
+      <p class="text-center">Não encontramos noticias <a href="/empresas" >Aqui</a> para voltar atrás.</p>
+    <% } %>
+  
+    </div>
+    <div class="page">
+      <form class="searchwork" id="searchworkEmpresas" name="search" method="get"  >
+     
+      
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <%  if (distrito){ %>
+         <div class="form__group">
+           <select type="text" class="form__input" id="cantao" name="distrito" placeholder="&#xf041; Cantão "  style="font-family:Arial, FontAwesome"   >
+            <option value="0" >Escolhe a localização </option> 
+            <%  for (let index in distrito){ %>
+               <% var selected = ( distrito[index].id == req.query.distrito ) ? "selected" : ""; %>	
+              <option <%=selected %> value="<%= distrito[index].id %>"><%= distrito[index].distrito %></option>
+            <% } %>  
+          </select>
+          <%  } %>
+      
+      
+      
+           <%  if (actividade){ %>	
+         </div>
+         <div class="form__group">
+             <select type="text" name="actividade" class="form__input" id="name" placeholder="Actividade"  >
+              <option value="0">Escolhe a actividade</option> 
+              <%  for (let index in actividade){ %>
+                <% var selected = ( actividade[index].id == req.query.actividade ) ? "selected" : ""; %>	
+                <option <%=selected %> value="<%= actividade[index].id %>"><%= actividade[index].actividade%></option>
+              <% } %>  
+            
+            </select>
+         
+         </div>
+         <%  } %>
+      
+      
+      
+      
+      
+        
+         <div class="form__group" id="btnsearch">
+             <input  type="submit" name="search" value="&#xF002; Procurar" class="form__input" id="name" placeholder="&#xF002; Search" required=""style="font-family:Arial, FontAwesome" />
+      
+           </div>
+           
+         </form>
+        <div class="job">
+          
+        <% if (players!=undefined) {%>
+          <% if (players.length > 0) {%>
+            <% players.forEach((player, index) => { %>
+            <div class="jobcontainer">
+                <img id="imagem" src="/assets/imgjobs/<%= player.image %>"/>
+                <div class="dados">
+                    <span class="descricaojob"><h3><%= player.nome_emprego %></h3></span>
+                    <span class="empresajob"><%= player.nome_empresa %></span><br>
+                    <div class="footerjob">
+                      <span class="datajob"><%= player.criado_em.toDateString() %></span>
+                      <a href="/emprego/?id=<%= player.id %>">Abrir</a>
+                </div>      
+                    <span class="cityjob"> <% if(player.distrito_nome==52) { %>
+                      <h5>Zürich</h5>
+                      <% } %>
+                      <span class="cityjob"> <% if(player.distrito_nome==53) { %>
+                        <h5>Bern</h5>
+                        <% } %>
+                        <span class="cityjob"> <% if(player.distrito_nome==54) { %>
+                          <h5>Luzern</h5>
+                          <% } %>
+                          <span class="cityjob"> <% if(player.distrito_nome==55) { %>
+                            <h5>Uri</h5>
+                            <% } %>
+                            <span class="cityjob"> <% if(player.distrito_nome==56) { %>
+                              <h5>Schwyz</h5>
+                              <% } %>
+                              <span class="cityjob"> <% if(player.distrito_nome==57) { %>
+                                <h5>Obwalden</h5>
+                                <% } %>
+                                <span class="cityjob"> <% if(player.distrito_nome==58) { %>
+                                  <h5>Nidwalden</h5>
+                                  <% } %>
+                                  <span class="cityjob"> <% if(player.distrito_nome==59) { %>
+                                    <h5>Glarus</h5>
+                                    <% } %>
+                                    <span class="cityjob"> <% if(player.distrito_nome==60) { %>
+                                      <h5>Zug</h5>
+                                      <% } %>
+                                      <span class="cityjob"> <% if(player.distrito_nome==61) { %>
+                                        <h5>Freiburg</h5>
+                                        <% } %>
+                                        <span class="cityjob"> <% if(player.distrito_nome==62) { %>
+                                          <h5>Solothurn</h5>
+                                          <% } %>
+                                          <span class="cityjob"> <% if(player.distrito_nome==63) { %>
+                                            <h5>Basel-Stadt</h5>
+                                            <% } %><span class="cityjob"> <% if(player.distrito_nome==64) { %>
+                                              <h5>Basel-Landschaft</h5>
+                                              <% } %><span class="cityjob"> <% if(player.distrito_nome==65) { %>
+                                                <h5>Schaffhausen</h5>
+                                                <% } %><span class="cityjob"> <% if(player.distrito_nome==66) { %>
+                                                  <h5>Appenzell Ausserrhoden</h5>
+                                                  <% } %><span class="cityjob"> <% if(player.distrito_nome==67) { %>
+                                                    <h5>Appenzell Innerrhoden</h5>
+                                                    <% } %><span class="cityjob"> <% if(player.distrito_nome==68) { %>
+                                                      <h5>St. Gallen</h5>
+                                                      <% } %><span class="cityjob"> <% if(player.distrito_nome==69) { %>
+                                                        <h5>Graubünden</h5>
+                                                        <% } %>
+
+                      
+                      <% if(player.distrito_nome==70) { %>
+                      <h5>Aargau</h5>
+                      <% } %>
+                      <span class="cityjob"> <% if(player.distrito_nome==71) { %>
+                        <h5>Thurgau</h5>
+                        <% } %><span class="cityjob"> <% if(player.distrito_nome==72) { %>
+                          <h5>Tessin</h5>
+                          <% } %><span class="cityjob"> <% if(player.distrito_nome==73) { %>
+                            <h5>Waadt</h5>
+                            <% } %>
+                            <span class="cityjob"> <% if(player.distrito_nome==74) { %>
+                              <h5>Wallis</h5>
+                              <% } %>
+                              <span class="cityjob"> <% if(player.distrito_nome==75) { %>
+                                <h5>Neuenburg</h5>
+                                <% } %>
+                                <span class="cityjob"> <% if(player.distrito_nome==76) { %>
+                                  <h5>Genf</h5>
+                                  <% } %>
+                    </span>
+                   
+                </div>
+            </div>
+
+            <% }) %>
+            <% }} else { %>
+                <p class="text-center">Não encontramos empresas <a href="/index" >Aqui</a> para voltar atrás.</p>
+            <% } %>
+        </div>
+    </div>
+   
+    <style>
+        .page{background-color: rgb(255, 255, 255);margin-top: 0px;}
+        .searchwork{background-color: rgb(66, 66, 66); float: left; width: 100%;}
+        .jobcontainer{display: inline-flex; border-style: solid;border-color: rgb(179, 177, 177);border-width: 1px;
+          color: dimgray; border-radius: 5px; width: 90%; margin-bottom: 20px;}
+        .job{width: 85%; margin-left: 10%; margin-top: 20px;}
+        #imagem{width: 200px; height: 200px;border-radius: 5px;}
+        .dados{margin-left: 20px; font-weight: 600; width: 1005;}
+        .footerjob{margin-top: 70px; position: absolute;}
+        .footerjob a{margin-left:350px ; background-color: rgb(73, 73, 73);; padding: 5px 20px; 
+          color:rgb(255, 255, 255);text-decoration: none;border-radius: 5px;}
+          .footerjob a:hover{background-color: rgb(190, 192, 194);}
+        .datajob{color: rgb(165, 164, 164); font-size: 12px;}
+        .page #name{width: 290px;}
+        .page #cantao{width: 290px;}
+        .cityjob{ padding-top: 60px;}
+        @media all and  (max-width: 750px) {
+          .searchwork{display: block;margin-top: 20px; margin-bottom: 50px; height: 160px;width: 100%;}
+          .searchwork #cantao{width: 70%; margin: auto;margin-bottom: 5px;}
+          .searchwork #name{width: 70%; margin: auto;margin-bottom: 5px;}
+          .empresasMain{margin-top: 0px;}
+          .jobcontainer{width: 98%;height: 150px;}
+          .job{width: 98%; margin: auto;}
+          .footerjob a{margin-left: 170px}
+          #imagem{width: 100px; height: 100px;border-radius: 5px;}
+          .footerjob{margin-top: 105px; position: absolute;}
+          .cityjob{padding-top: 80px;position: static;margin-left: -100px; font-size: 16px; margin: auto;}
+          .datajob{color: rgb(165, 164, 164); font-size: 10px; margin-left: -110px;}
+          .dados  h3{padding-top: -5px; font-size: 14px;margin: auto; margin-bottom: 60px; position: absolute;}
+          .empresajob{padding-top: 125px;position: absolute; font-size: 12px;color: rgb(165, 164, 164);}
+        }
+
+
+    </style>
+  
+ 
+
+
+</div>
+
+<% include footer.ejs %>

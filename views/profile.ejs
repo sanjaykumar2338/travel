@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165286586-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165286586-1');
+</script>
+
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>O teu perfil</title>
+ <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+ <link rel="stylesheet" 
+ href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+ <style>
+ 
+ </style>
+</head>
+<body>
+ <div class="container">
+  <div class="page-header text-center">
+    <img src="/imguser/<%= user.imagem %>" style="width: 150px; height: 150px; border-radius: 50%;" >
+    <h3><span class="fa fa-user"></span> Olá <%= user.username %></h3>
+   
+  </div>
+        <style>
+            #well1{ display: inline-flex;
+             flex-wrap: wrap;
+             width: 100%;
+              margin: auto;
+              justify-content: space-around;}
+        </style>
+  <div class="row">
+   <div class="col-sm-12">
+    <div class="well" id="well1" >
+    
+             <a href="/index"> Ir para o inicio</a>
+             <a href="/empresas"> ir para empresas</a>
+             <a href="/charge">adicionar empresas</a>
+             
+             <a href="/logout" class="btn btn-danger btn-sm">Sair</a>
+
+    </div>
+   </div>
+               <style>
+                 #imguser2{
+                   width: 80px;
+                   height: 80px;
+                   border-radius: 50%;
+                 }
+                 .headbox2{
+                   display: inline-flex;
+                   line-height: 7px;
+                 }
+                 .datacoment2{
+                   font-size: 11px;
+                   color: darkgrey;
+                 }
+                 .mensagemprofile{
+                   margin-left: 100px;
+                   margin-top: -10px;
+                   border-bottom: rgb(206, 204, 204);
+                   border-bottom-style: solid;
+                   border-bottom-width: 1px;
+                 }
+                 .nomeedata2{
+                   margin-left: 10px;
+                 }
+                 .well p{color: rgb(152, 160, 160);
+                   
+                 }
+
+               </style>
+      <div class="container1" style="margin: auto;">
+       <div class="col-sm-6">
+        <div class="well" style="overflow: scroll; height: 500px;">
+          <p style="color: rgb(152, 160, 160);"> Mensagens</p>
+       
+         
+          <% if (messages.length > 0) {%>
+            <% messages.forEach((message, index) => { %>
+          <div class="mensagensProfile">
+            <div class="headbox2">
+              <div class="fotouser2"><img id="imguser2" src="/imguser/<%= message.userimage%>" alt=""></div>
+              <div class="nomeedata2">
+                
+                <span class="nomeusercoment2"><a href=""><h4><%= message.username%></h4></a></span>
+                <span class="datacoment2" ><%= message.criado_em.toDateString() %></span>
+                 
+              </div>
+            </div>
+            <div class="mensagemprofile">
+              <h5><%= message.mensagem %></h5>
+                 
+
+              
+
+
+
+              <div  class="resposta">
+                <a  href="./chat?id=<%= message.mensagem_id %>" style="float: right;"><h5>responder</h5></a>
+                 
+              </div>
+            </div>
+            
+          </div>
+          
+          <br><br>
+          <% }) %>
+          <% } else { %>
+            <p class="text-center">Não tem mensagens.</p>
+          <% } %>
+        </div>
+       </div>
+       <div class="col-sm-6">
+        <div class="well">
+          <p>As tuas empresas</p>
+          <% if (empresas.length > 0) {%>
+            
+            <% empresas.forEach((empresa, index) => { %>
+              <div class="empresasShow" style="margin: auto;" >
+              <article class="card"  style="position: static;">
+                <div class="thumb"  ><img style="width: 80%; height: 300px;" src="/assets/img/<%= empresa.image %>" ></div>
+                <div class="infos">
+                  <h2 class="title"><%= empresa.nome_empresa %><span class="flag" ></span></h2>
+                 
+                  </p>
+                  <h3 class="details">  <a  href="/empresaProfile/<%= empresa.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-success">Ver</a> <a href="/edit-player/?id=<%= empresa.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-success">Editar</a>
+                    <a href="/delete/<%= empresa.id %>" class="btn btn-sm btn-danger">Apagar</a>   </h3>
+                </div>
+              </article>
+              <% }) %>
+                          
+                     
+              <% } else { %>
+                  <p class="text-center">Não existem empresas. Se tens uma empresa ou negócio adiciona <a href="/add" >aqui</a></p>
+              <% } %>
+          
+          
+        </div>
+       </div>
+
+
+      </div> 
+</body>
+</html>

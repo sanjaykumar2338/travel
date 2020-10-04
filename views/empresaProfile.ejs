@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165286586-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165286586-1');
+</script>
+<% if (player) { %>
+    <title>Empresas - <%= player.nome_empresa %></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="author" content="DS">
+  <meta name="description" content="A platafroma dos Portugueses lá fora">
+  <meta name="keywords" content="A platafroma dos Portugueses lá fora">
+
+ 
+  <meta name="description" content= "<%= player.descricao %>">
+  <meta property="og:description "      content="<%= player.descricao %>" />
+ 
+  <link rel="image_src" href="https://www.portugal-la-fora.com/assets/img/<%= player.image %>"/>
+  <meta property="og:image"         content="https://www.portugal-la-fora.com/assets/img/<%= player.image %>" />
+ 
+
+  <link href="/blog/resources/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/resources/css/empresas.css">
+  <link rel="stylesheet" type="text/css" href="/resources/css/conteudo.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <script type="text/javascript"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Oswald:wght@500&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script data-ad-client="ca-pub-1839405568230983" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  
+</head>
+<body>
+  <div id="fb-root"></div>
+  <script>
+  window.fbAsyncInit = function() {
+  FB.init({appId: '706421426851771', status: true, cookie: true,
+  xfbml: true});
+  };
+  (function() {
+  var e = document.createElement('script'); e.async = true;
+  e.src = document.location.protocol +
+  '//connect.facebook.net/pt_PT/all.js';
+  document.getElementById('fb-root').appendChild(e);
+  }());
+  </script>
+    
+   <header>
+    <div class="content" id="navbar" style="width: 100%;">
+        <div id="logo">
+          <a href="/" style="text-decoration: none;"> <img  src="/resources/images/Color logo - no background.png"> </a>
+       </div>
+    
+       <div class="tutorial" id="dropmenu" style="position: relative;">
+         <ul id="dropdown">
+             <li><a href="/index">Home </a></li>
+             <li><a >Empresas <i class="fas fa-chevron-down fa-xs"></i></a>
+                 <ul>
+                   <li><a href="/empresas">Empresas</a> </li>
+                   <li><a href="/charge"> Adicionar empresas</a></li>
+                   </ul>
+                 </li>
+             
+             <li><a >Artigos<i class="fas fa-chevron-down fa-xs"></i></a>
+             <ul>
+                     <li><a href="/artigos">Ver todos os artigos</a></li>
+                    
+                   </ul></li>
+             <li><a >Viagens <i class="fas fa-chevron-down fa-xs"></i></a>
+             <ul>
+                     <li>Sobre as nossas viagens <li></li>
+                   </ul></li>  
+             <li><a >Mais <i class="fas fa-chevron-down fa-xs"></i></a>
+                     <ul>
+                             <li><a href="/sobrenos"> Sobre nós</a></li>
+                               <li><a href="/contato">Contatos</a></li>
+                             
+                           </ul></li>         
+                   <li><a ><i class="fas fa-user"></i>  A tua conta  <i class="fas fa-chevron-down fa-xs"></i></a >
+                     <ul>
+                       <li><a href="/login">Entra</a> </li>
+                       <li><a href="/signup">Registra-te</a> </li>
+                       <li><a href="/profile">O teu perfil</a></li>
+                       
+                     </ul></li>   
+
+         </ul>     
+      </div>  
+     
+      
+      <div onclick="myFunction7()" class="device" id="device">
+       <a  id="burger" class="open-main-nav">
+       <span class="burger"><i  class="fas fa-bars"></i></span></a>
+        
+       
+       
+       <nav class="main-nav" id="main-nav" >
+         
+       <ul >
+         <a href=""><span onclick="myFunction10()" id="x">X</span></a>
+       <li><a href="/index">Home </a></li>
+       <li><a href="#" onclick="myFunction1()">Empresas <i class="fas fa-chevron-down fa-xs"></i></a>
+           <ul  id="empresas" style="display:none;">
+             <li><a href="/empresas">Empresas </a> </li>
+             <li><a href="/charge"> Adicionar empresas </a></li>
+             </ul>
+           </li>
+       <li><a href="#" onclick="myFunction2()"> Transportes<i class="fas fa-chevron-down fa-xs"></i></a>
+         <ul id="empresas2">
+           <li><a href="#">Procurar Transportes</a> </li>
+         
+           
+         </ul></li>
+       <li><a href="#" onclick="myFunction3()" >Artigos<i class="fas fa-chevron-down fa-xs"></i></a>
+       <ul id="empresas3">
+               <li><a href="/artigos">Ver todos os artigos</a></li>
+              
+             </ul></li>
+       <li><a href="#" onclick="myFunction4()" >Viagens <i class="fas fa-chevron-down fa-xs"></i></a>
+       <ul id="empresas4">
+               <li>Sobre as nossas viagens <li></li>
+             </ul></li>  
+       <li><a href="#" onclick="myFunction5()" >Mais <i class="fas fa-chevron-down fa-xs"></i></a>
+               <ul id="empresas5">
+                       <li><a href="/sobrenos"> Sobre nós</a></li>
+                         <li><a href="/contato">Contatos</a></li>
+                       
+                     </ul></li>         
+             <li><a href="#" onclick="myFunction8()" ><i class="fas fa-user"></i>  A tua conta  <i class="fas fa-chevron-down fa-xs"></i></a >
+               <ul id="empresas6">
+                 <li><a href="/login">Entra</a> </li>
+                 <li><a href="/signup">Registra-te</a> </li>
+                 <li><a href="/profile">O teu perfil</a></li>
+                 
+               </ul></li> 
+               <ul id="empresas10" style="display: none;">
+                 <li>Sobre as nossas viagens </li>
+               </ul>  
+
+           </ul>   
+        </nav>
+     </div>
+       
+           <script>
+               function myFunction1() {
+                  document.getElementById("empresas").style.display =  ((empresas.style.display!='block') ? 'block' : 'none');
+                 }
+                 function myFunction2() {
+                  document.getElementById("empresas2").style.display =  ((empresas2.style.display!='block') ? 'block' : 'none');
+                 }
+                 function myFunction3() {
+                  document.getElementById("empresas3").style.display =  ((empresas3.style.display!='block') ? 'block' : 'none');
+                 }
+                 function myFunction4() {
+                  document.getElementById("empresas4").style.display =  ((empresas4.style.display!='block') ? 'block' : 'none');
+                 }
+                 function myFunction5() {
+                  document.getElementById("empresas5").style.display =  ((empresas5.style.display!='block') ? 'block' : 'none');
+                 }
+                 function myFunction8() {
+                  document.getElementById("empresas6").style.display =  ((empresas6.style.display!='block') ? 'block' : 'none');
+                 }
+                 function myFunction7() {
+                  document.getElementById("main-nav").style.display =  ((empresas10.style.display!='block') ? 'block' : 'none');
+                 }
+                 function myFunction10() {
+                   var x = document.getElementById("main-nav");
+                 if (x.style.display === "block") {
+                  x.style.display = "none";
+                     } else {
+                 x.style.display = "block";
+                   }
+                   }
+                
+
+
+                 function myFunction9(x) {
+ if (x.matches) { // If media query matches
+   document.getElementById("burger44").style.display = "block";
+ } else {
+   document.getElementById("burger44").style.display = "none";
+ }
+}
+
+var x = window.matchMedia("(max-width: 1000px)")
+myFunction(x) // Call listener function at run time
+x.addListener(myFunction9) 
+
+
+             </script>
+
+       <style>
+         #logo img{width: 17%;height:40px ; position: absolute; margin-top: -20px;margin-left: -65px;}
+         #device ul a{
+           text-decoration: none;
+           color: white;
+           
+         }
+         #main-nav ul li a{
+           line-height: 50px;
+           font-size: 25px;
+           margin-left: 10px;
+           
+         }
+        
+        
+         #device ul{
+           float: left;
+         list-style: none;
+         width: 100%;
+         margin-left:-310px ;
+         position: fixed;
+         background-color: rgb(87, 86, 86);
+         height: 100%;
+       }
+
+         #device{
+         display: none;
+         margin: auto;
+         justify-content: center;
+        
+         }
+         .burger{
+           margin: auto;
+           justify-content: center;
+
+         }
+         .burger i{font-size:30px ;
+         margin: auto;
+         position: fixed;
+         justify-content: center;
+       margin-top: -10px;
+     margin-left: -10%;}
+     .burger i:hover{
+       cursor: pointer;
+     }
+
+
+         #main-nav {
+           display:none;
+          position: relative;
+           padding-top: 0px;
+           background-color: rgb(102, 102, 102);
+           height: 700px;
+           
+           margin-top: -10px;
+           list-style: none;
+           
+         }
+         #x{ color: white;
+         font-size: 34px;}
+
+          #main-nav ul li ul {
+           display: none;
+            margin-left: 20px;
+            
+           border: #9da1a1;
+                border-top-style: solid;
+           border-width: thin;
+             border-bottom-style:solid ;
+           padding-bottom: -20px;
+               margin-bottom: 10px;
+           height: fit-content;
+
+           }
+           #main-nav ul li ul {
+             margin-left: -40px;
+
+            
+            color: rgb(218, 216, 216);
+
+           }
+           .empresasBusca{display:none;}
+            
+            .empresasBusca{
+               background-color:rgb(141, 137, 137); 
+                text-decoration: none;
+               }
+
+               .empresasBusca:hover{
+              cursor: pointer;
+                           background-color: rgb(128, 126, 126);
+                   }
+                   .sideBar2{display:none;}
+                   #sidebarartigos2{display: none;}
+                  footer{margin-top: -150px;}
+                 
+
+
+
+
+
+        /* Main menu positionning */
+        @media all and  (max-width: 1000px) {
+          #device{
+          display: block;
+          }
+          #logo img{width: 18%;height:38px ; position: absolute; margin-top: -20px;margin-left: 5%;}
+         
+        
+         }
+         @media all and  (max-width: 950px) {
+           .empresasBusca{display:contents;}
+           #logo img{width: 36%;height:40px ; position: absolute; margin-top: -20px;margin-left: 5%;}
+         
+           
+           .sidebarpublicidade2{display: block;}
+           #sidebarartigos2{display: block;}
+           .sideBar2{display: block;
+           }
+           .sidebarpublicidade{display: none;}
+           #sidebarartigos{display: none;}
+           .burger i{
+            margin-left: 30px;
+          }
+          main{
+            min-height:100% ;
+            margin: 10px;
+          }
+          #logo{margin-left: 20px;}
+          
+             footer{
+               position: relative;
+               margin-top: 1550px;
+               z-index: 98;
+             bottom: 0;
+             }
+          
+          #device{
+          display: block;
+          margin: auto;
+          float: right;
+          }
+          #navbar{
+            max-width: 950px;
+          }
+          #main-nav{overflow: hidden; }
+          #contactos{
+            display: none;
+            
+          }
+
+          }
+          @media all and  (max-width: 950px) {
+            #device ul{margin-left: -210px;
+           }
+          .burger i{
+            margin-left: 30px;
+          }
+          .comentariosIndex{
+            display: block; width: 100%;}
+          }
+         
+          @media  (max-width: 950px) {
+        .empresasMain{
+             display: block;
+             margin: auto;
+                       }
+         .destaque1{ display: block;}
+         .rightcards{display: none;}
+       }
+        @media  (max-width: 650px) {
+         #logo img{width: 48%;height:50px ; position: absolute; margin-top: -20px;margin-left: 0;}
+         .burger i{
+            margin-left: 100px;
+          }
+         
+       }
+
+
+         </style>
+      
+        <div id="contactos">
+            <div class="redes">  
+            <a class="fac" href="facebook.com/portugal.lafora.9"><i class="fa fa-facebook fa-lg"></i></a>
+            <a class="ins" href="#"><i class="fa fa-instagram fa-lg"></i></a>
+         </div> 
+        </div>
+    </div>
+</header>  
+<script>let burger = document.getElementById('burger'),
+  nav    = document.getElementById('main-nav'),
+  slowmo = document.getElementById('slowmo');
+
+burger.addEventListener('click', function(e){
+ this.classList.toggle('is-open');
+ nav.classList.toggle('is-open');
+});
+
+slowmo.addEventListener('click', function(e){
+ this.classList.toggle('is-slowmo');
+});
+
+/* Onload demo - dirty timeout */
+let clickEvent = new Event('click');
+
+window.addEventListener('load', function(e) {
+ slowmo.dispatchEvent(clickEvent);
+ burger.dispatchEvent(clickEvent);
+ 
+ setTimeout(function(){
+   burger.dispatchEvent(clickEvent);
+   
+   setTimeout(function(){
+     slowmo.dispatchEvent(clickEvent);
+   }, 3500);
+ }, 5500);
+});</script>
+
+
+
+
+
+
+
+
+
+  <style>
+      @media all and  (max-width: 750px) {
+        .sideBar{display: none;}
+        .empresaBody{display: block;min-width: 100%;margin: auto; }
+        .empresaProfile{display: block;width: 100%;margin-right: 0;}
+        .prim{width: 100%;  overflow: hidden;margin:auto;margin-top: -15px;}
+        .empresasMain{width: 100%; overflow-x: hidden;}
+        .prim img{width: 100%; height: 100px;}
+        .empresaBody{margin-top: 30px;}
+        .rating-form2{margin-left: -9%;}
+        .tituloEmpresaProfile{font-size: 22px; margin-bottom: 0px;}
+        .prim .formcontact{width: 96%;display: block;  margin-left:15px;margin-top: -30px;}
+        .prim .morada3{margin-left:15px}
+        .descricaoEmpresa{width: 98%;margin-bottom: 90px;}
+        .descricaoEmpresa h3{ margin-left: 60%;width: 100%;}
+        .classificacao{width: 94%;}
+        .section_listing{width: 96%; background-color: gray; margin: auto; border-radius: 5px;}
+        html{overflow-x: hidden;}
+        .estrelas{margin-left: -40px;}
+        .segu .empresaChat{line-height: 10px;  width: 60px; position: fixed ; float: left; margin-left: 10px;margin-top: 80px; z-index: 99;
+               }
+        .footer{ height: 230px; margin-left: -26px;
+         line-height: 15px;}      
+        .footer li{
+        padding-bottom: 20px;}
+        #imagem1{height: 250px;}
+
+
+      }
+
+      .empresaChat{line-height: 10px; float: right; width: 60px; position: fixed; margin-top: 400px;
+              margin-left: 460px; }
+       .section_listing{width: 70%; background-color: gray; margin: auto; border-radius: 5px;}
+      .formcontact {display: inline-flex;}
+      .empresaBody{margin-top: 60px;}
+      .prim img{background-position: center; border-radius: 5px; 
+                background-repeat: no-repeat;
+                background-size: cover;
+              width: 100%; height: 400px;background-position: center; background-attachment: fixed;}
+
+      .empresaProfile{width: 98%; background-color: rgb(80, 79, 79); }
+  .nextbutton {
+      background-color: #FFFFFF;
+      border: 1px solid #C9C9C9;
+      color: #666666 !important;
+      display: inline-block;
+      height: 15px;
+      line-height: 14px;
+      padding: 4px;
+      text-align: center;
+      text-decoration: none;
+      width: 55px;
+    
+  }
+ 
+  #page_navigation{
+      padding-top:8px;
+    margin: 24px;
+  }
+  </style>
+  <div class="empresasMain">
+    <div class="sideBar" style="margin-top: 10px;">
+      <div class="empresasWorkSearch1" style=" height: 130px; padding-top: 10px; width: 98%; margin-left: 0;  margin-top: 50px; " >
+         <div class="workSearchTitle">
+           <a href="/empresas">
+           <h3>Transportes </h3>
+           <p>Portugal <i class="fas fa-arrows-alt-h"></i>   Suiça</p>
+           <h1><i class="fas fa-search"></i></h1>
+         </a>
+         </div>
+         
+       </div>  
+         
+       
+      
+       <br>
+       
+       <div class="sidebarpublicidade" style="margin-bottom: 15px;">
+        <img style="width: 98%;height: 240px;" src="/assets/img/Rebeka_Collier54@yahoo.com.jpeg"/>
+        <h2 style="position: absolute; margin-top: -250px;width: 200px;color: white;margin-left: 50px;">Espaço para publicidade</h2>
+      </div>
+   
+      <section id="sidebarartigos" class="cards-wrapper">
+        <% if (sidenews.length > 0) {%>
+          <% sidenews.forEach((sidenew, index) => { %>
+        
+       
+         <div class="sidenewcard">
+          <a href="./conteudo?id=<%= sidenew.id %>"> <div class="imgside">
+             <img src="/uploads/blog_images/<%= sidenew.image %>" alt="">
+           </div>
+           <div class="date"><%= sidenew.created_at.toDateString() %></div>
+           <p  ><%= sidenew.blog_title %></p>
+           <div class="tag" style="font-weight: 600px;"><h4>Artigos</h4></div>
+
+         </div></a>
+        
+          <style>
+            .sidenewcard{
+              position: relative;
+            }
+            .sidenewcard:hover{
+              filter: brightness(150%);
+              opacity: 0.9;
+            }
+            .imgside img{
+              height: 250px;
+              width: 97%;
+              position: relative;
+              filter: brightness(50%);
+            }
+            .date{
+              position:absolute;
+              top: 8px;
+               right: 16px;
+               color:white;
+               font-size: 12px;
+            }
+                               
+               .sidenewcard p{
+                 color:white;
+                 position: absolute;
+                 top: 35%;
+                 left: 5%;
+                
+                font-size: 20px;
+               }
+               .tag{
+                color:white;
+                 position: absolute;
+                 bottom: 8px;
+                     left: 16px;
+                     background-color: grey;
+                     padding:13px;
+                     border-radius:5px;
+                     font-weight: 600px;
+                     font-family: 'Open Sans', sans-serif;
+                     line-height: 0px;
+                     padding-top: 0px;
+                     padding-bottom: 1px;
+                    
+                     
+
+               }
+          </style>
+        <% }) %>
+
+        <!-- https://images.unsplash.com/photo-1520839090488-4a6c211e2f94?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=38951b8650067840307cba514b554ba5&auto=format&fit=crop&w=1350&q=80 -->
+      </section>
+      
+      <% } else { %>
+        <p class="text-center">Não encontramos noticias <a href="/empresas" >Aqui</a> para voltar atrás.</p>
+      <% } %>
+   
+      </div>
+   <style>
+   .table-wrapper {
+      margin-top: 50px;
+   }
+   
+   .player-img {
+      width: 40px;
+      height: 40px;
+   }
+   
+   .add-player-form {
+      margin-top: 50px;
+
+   }
+   #fb{float: right; margin-top: -40px;}
+   </style>
+  
+
+    
+      <div class="empresaProfile"  >
+      
+          <div class="empresaBody" >
+            <br>
+            <div class="prim">
+             
+              <h5><a style="margin-left: 25px; color: white; text-decoration: none;" href="/empresas"><< Voltar</a></h5>
+              <div class="fb-share-button" id="fb"  data-href="https://www.portugal-la-fora.com/empresaProfile/<%= player.id %>" data-layout="button_count" data-size="large"><a id="fb" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.portugal-la-fora.com%2FempresaProfile/<%= player.id %>%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore"></a></div>
+        
+       
+       
+              
+
+
+              
+              <div class="empresaHead"  ><img id="imagem1"  src="/assets/img/<%= player.image %>">
+                 <form class="rating-form2 centered" style="content:''" action="#" method="post" name="rating-movie">
+                            <fieldset class="form-group">
+                              
+                              
+                              
+                              <div class="form-item">
+                    
+                  <%if (rating == "" || !rating) { %>
+                      <input id="" checked name="rating" type="radio" value="3" />
+                      <label for="rating-3" data-value="3">
+                      <span class="rating-star">
+                      <i class="fa fa-star-o"></i>
+                      <i class="fa fa-star"></i>
+                      </span>
+                       <span class="rating-star">
+                      <i class="fa fa-star-o"></i>
+                      <i class="fa fa-star"></i>
+                      </span>
+                       <span class="rating-star">
+                      <i class="fa fa-star-o"></i>
+                      <i class="fa fa-star"></i>
+                      </span>
+                                </label>
+                  
+                    <% } %>
+                  
+                    <%if (rating == 5) { %>
+                    <input id="" checked name="rating" type="radio" value="5" />
+                    <label for="rating-5" data-value="5">
+                      <span class="rating-star">
+                      <i class="fa fa-star-o"></i>
+                      <i class="fa fa-star"></i>
+                      </span>
+                      <span class="rating-star">
+                      <i class="fa fa-star-o"></i>
+                      <i class="fa fa-star"></i>
+                      </span>
+                       <span class="rating-star">
+                      <i class="fa fa-star-o"></i>
+                      <i class="fa fa-star"></i>
+                      </span>
+                       <span class="rating-star">
+                      <i class="fa fa-star-o"></i>
+                      <i class="fa fa-star"></i>
+                      </span>
+                       <span class="rating-star">
+                      <i class="fa fa-star-o"></i>
+                      <i class="fa fa-star"></i>
+                      </span>
+                    </label>
+                  <% } %>
+                  
+                  <%if (rating == 4) { %>
+                    <input id="" checked name="rating" type="radio" value="4" />
+                    <label for="rating-4" data-value="4">
+                      <span class="rating-star">
+                      <i class="fa fa-star-o"></i>
+                      <i class="fa fa-star"></i>
+                      </span>
+                       <span class="rating-star">
+                      <i class="fa fa-star-o"></i>
+                      <i class="fa fa-star"></i>
+                      </span>
+                       <span class="rating-star">
+                      <i class="fa fa-star-o"></i>
+                      <i class="fa fa-star"></i>
+                      </span>
+                       <span class="rating-star">
+                      <i class="fa fa-star-o"></i>
+                      <i class="fa fa-star"></i>
+                      </span>
+                    </label>
+                                <% } %>
+                  
+                  <%if (rating == 3) { %>
+                                <input id="" checked name="rating" type="radio" value="3" />
+                                <label for="rating-3" data-value="3">
+                                  <span class="rating-star">
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star"></i>
+                                  </span>
+                     <span class="rating-star">
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star"></i>
+                                  </span>
+                     <span class="rating-star">
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star"></i>
+                                  </span>
+                                </label>
+                  <% } %>
+                  
+                  <%if (rating == 2) { %>
+                    <input id="" checked name="rating" type="radio" value="2" />
+                    <label for="rating-2" data-value="2">
+                      <span class="rating-star">
+                      <i class="fa fa-star-o"></i>
+                      <i class="fa fa-star"></i>
+                      </span>
+                       <span class="rating-star">
+                      <i class="fa fa-star-o"></i>
+                      <i class="fa fa-star"></i>
+                      </span>
+                    </label>
+                  <% } %>
+                  
+                  <%if (rating == 1) { %>
+                                <input id="" checked name="rating" type="radio" value="1" />
+                                <label for="rating-1" data-value="1">
+                                  <span class="rating-star">
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star"></i>
+                                  </span>
+                    <span class="rating-star">
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star"></i>
+                                  </span>
+                                </label>
+                                <% } %>
+                              </div>
+                            </fieldset>
+                </form>
+
+                <span><h1 class="tituloEmpresaProfile"><%= player.nome_empresa %></h1></span>
+              </div>
+             
+            
+            <div class="oo">
+            
+                <span class="empresaChat2" id="myBtn23"  ><a id="myBtn2" style="text-decoration: none;" >
+                  <i style="font-size: 30px; margin-left: 20px;" class="fas fa-comment"></i>
+                  <h5 style="color: white; margin-top: -25px; margin-left: 70px;">Envia uma mensagem </h5></a>
+                </span>  
+              
+              
+                <span class="seefacebook" id="myBtn24"  ><a  style="text-decoration: none;" >
+                  <i style="font-size: 25px; margin-left: 20px;" class="fa fa-facebook fa-lg"></i>
+                  <h5 style="color: white; margin-top: -20px; margin-left: 80px;">Ver o facebook </h5></a>
+                </span>  </div>
+             
+
+
+                        <style> 
+                                      @media all and  (max-width: 750px) {.prim .empresaChat2{margin-left: 15%;  }
+                                    .prim .seefacebook{margin-left: 15%;}
+                                    #myBtn23{margin-top: -200px; margin-left: 15%; margin-bottom: 20px;}
+                                    #myBtn24{margin-top: -130px; margin-left: 15%; margin-bottom: 20px;}
+                                    .oo{margin-top: -200px;}
+                                   }
+
+                                    .prim .seefacebook{margin-top:80px;display: inline-flex;background-color: rgb(12, 72, 202); width: 250px;height: 30px; border-radius: 10px;
+                                      padding-top: 9px;margin-left: 20%; margin-top: 10px }
+
+                                     .prim .empresaChat2{display: inline-flex;background-color: darkgoldenrod; width: 250px;height: 35px; border-radius: 10px;
+                                      padding-top: 3px;margin-left: 20%; margin-top: -30px;}
+                                    .prim .empresaChat2:hover{ background-color: rgb(110, 88, 30); cursor: pointer;}
+                                    .prim .seefacebook:hover{ background-color: rgb(35, 37, 155); cursor: pointer;}
+
+
+                                    .empresachat a:hover > i{
+                                      color: gray;
+                                      cursor: pointer;
+                                    }
+                                    
+                                    .empresachat:hover {
+                                      
+                                      cursor: pointer;
+                                    }
+                                  </style>
+                              
+  
+            
+              
+       
+            </div>
+           
+            <div class="segu">
+               
+              <span class="empresaChat" ><a id="myBtn" style="text-decoration: none;" >
+                <i style="font-size: 80px;" class="fas fa-comment"></i>
+                <h5 style="font-size: 12px; white-space: wrap; width: 60px; margin-top: -60px; padding-left: 5px;color: black;
+                
+               
+                    ">Entra em contacto com a empresa</h5></a>
+                    <style>
+                      .empresachat a:hover > i{
+                        color: gray;
+                        cursor: pointer;
+                      }
+                      
+                      .empresachat:hover {
+                        
+                        cursor: pointer;
+                      }
+                    </style>
+              </span>
+              
+              <div class="formcontact" >
+                <div class="actividade3">
+                  <h5 style="color: rgb(185, 185, 185);">Actividade:</h5>
+         
+        <% if(player.categoria==1){ %>
+                  <h5>Transportes</h5>
+        <% } %>
+        <% if(player.categoria==2){ %>
+                  <h5>Limpezas</h5>
+        <% } %>
+        <% if(player.categoria==14) { %>
+                  <h5>Fitness</h5>
+        <% } %>
+        <% if(player.categoria=="") {%>
+                  <h5></h5>
+        <% } %>
+              </div>
+              <br><br>
+              <div class="contactos3">
+                  
+                  <h5 style="color: rgb(185, 185, 185);">Contactos:</h5>
+                  <h5><%= player.email %></h5>
+               
+                  <h5><%= player.telefone %></h5></div>
+                  <br>
+                  <br>
+                  </div>
+                  <div class="morada3">
+                      <h5 style="color: rgb(185, 185, 185);">Morada:</h5>
+          <% if(player.distrito_nome==52) { %>
+          <h5>Zürich</h5>
+          <% } %>
+          
+          <% if(player.distrito_nome==70) { %>
+          <h5>Aargau</h5>
+          <% } %>
+                  <h5><%= player.distrito_name %></h5>
+                  
+                  <h5><%= player.rua %></h5>
+                  
+                  <h5><%= player.codpos %></h5>
+                  </div>
+               <br>    
+  
+              <div class="descricaoEmpresa">
+                <h3>Sobre nós</h3>
+                <h5><%= player.descricao %></h5>
+               <h5><%= player.descricao2 %></h5>
+               <h5><%= player.descricao3 %></h5>
+              </div>
+                
+            </div>
+            
+    </div>
+    <div class="classificacao">
+      <h5 style="text-align: center;">Classifica e dá a tua opinião sobre a nossa empresa.</h5>
+      <div class="estrelas"><form class="rating-form main_form" action="/checkAuth" method="post" name="rating-movie">
+          <fieldset class="form-group">
+            
+            
+            
+            <div class="form-item">
+              
+              <input id="rating-5" name="rating" type="radio" value="5" />
+              <label for="rating-5" data-value="5">
+                <span class="rating-star">
+                  <i class="fa fa-star-o"></i>
+                  <i class="fa fa-star"></i>
+                </span>
+                
+              </label>
+              <input id="rating-4" name="rating" type="radio" value="4" />
+              <label for="rating-4" data-value="4">
+                <span class="rating-star">
+                  <i class="fa fa-star-o"></i>
+                  <i class="fa fa-star"></i>
+                </span>
+                
+              </label>
+              <input id="rating-3" name="rating" type="radio" value="3" />
+              <label for="rating-3" data-value="3">
+                <span class="rating-star">
+                  <i class="fa fa-star-o"></i>
+                  <i class="fa fa-star"></i>
+                </span>
+                
+              </label>
+              <input id="rating-2" name="rating" type="radio" value="2" />
+              <label for="rating-2" data-value="2">
+                <span class="rating-star">
+                  <i class="fa fa-star-o"></i>
+                  <i class="fa fa-star"></i>
+                </span>
+                
+              </label>
+              <input id="rating-1" name="rating" type="radio" value="1" />
+              <label for="rating-1" data-value="1">
+                <span class="rating-star">
+                  <i class="fa fa-star-o"></i>
+                  <i class="fa fa-star"></i>
+                </span>
+                
+              </label>
+              
+             
+        
+              
+              
+            </div>
+            
+          </fieldset>
+        </form></div>
+          
+      <div class="form__group" id="addDescricaoEmpresa">
+          
+          <textarea type="text" class="form__input" id="descricao" name="descricao" placeholder="Escreve aqui... "  style="width: 80%;font-family:Arial, FontAwesome;margin: auto;height: 70px;"  required="" ></textarea>
+          
+      
+      
+          <input type="submit" id="btnadd" class="form__input"  value="Comentar" style="border-radius: 5%" >
+        </div>
+  </div>
+  
+  <section class="section_listing" >
+  <% if(reviews) { %>
+  <% reviews.forEach((player, index) => { %>	   
+  <div class="commented card" style="margin-left:20px; border-bottom: rgb(66, 66, 66); border-bottom-style:solid ;border-bottom-width: 1px;" >
+  <h4>
+  <%= player.username %>  %>
+  </h4>
+  
+   <% if(player.review) { %> 		
+  <h5><%= player.review %></h5>
+  <% } else{ %>
+  &nbsp;
+  <% } %>
+  <% 
+   
+   dte = new Date(player.created_at);
+  
+  %>
+  <p class="date_format" style="font-size: 10px;"><%= player.created_at  %></p>
+  
+  <div class="rating" style="width: 0px;display: inline-flex;">
+  <% for(i=0;i<player.rating;i++) { %>
+  <span style="color:gold">☆</span>
+  <% } %>
+  </div>
+  </div>
+ 
+  <% }); } %>
+  </section>
+      </div>
+  
+  
+      <div id="myModal" class="modal">
+  
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          
+            <h3 style="margin: auto; margin-left: 40px;">contata-nos</h3>
+            <form action="/messagetoempresa2" method="post" enctype="multipart/form-data">
+            
+             
+              <div class="form__group" id="sobrenosContato">
+                <textarea type="text"  name="empresaid"    style=" display: none;"  required="" ><%= player.id %></textarea>
+            </div>
+            <div class="form__group" id="sobrenosContato">
+              <textarea type="text"  name="empresaname"   style=" display: none;"    required="" ><%= player.nome_empresa %></textarea>
+          </div>
+          <div class="form__group" id="sobrenosContato">
+            <textarea type="text"  name="empresa_userid"   style=" display: none;"     required="" ><%= player.userid %></textarea>
+        </div>
+        
+       
+           
+              <div class="form__group" id="sobrenosContato">
+                  <textarea type="text" class="form__input" id="descricao" name="mensagem" placeholder="Mensagem... "  style="width: 80%;font-family:Arial, FontAwesome;margin: auto;height: 110px;"  required="" ></textarea>
+              </div>
+              <br>
+              <div class="form__group" id="btnadd" style="width: 30%; border-radius: 5px;">
+                <input style="width: 80%; border-radius: 5px;" type="submit" id="btnadd" class="form__input"  value="Enviar"  >
+                </div></form>
+       
+        </div>
+      
+      </div>
+     
+      <% } %>
+     
+      
+  
+      <style>
+       footer{margin-top: 60px;}
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      }
+      
+      /* Modal Content/Box */
+      .modal-content {
+        
+        background-color: #fefefe;
+        margin: 15% auto; /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+      }
+      
+      /* The Close Button */
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }</style>
+  
+      </div>
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+      
+       <script>var modal = document.getElementById("myModal");
+  
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+        
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+        
+        // When the user clicks on the button, open the modal
+        btn.onclick = function() {
+          modal.style.display = "block";
+        }
+        
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }</script>
+
+
+
+        <script>var modal = document.getElementById("myModal");
+  
+          // Get the button that opens the modal
+          var btn = document.getElementById("myBtn2");
+          
+          // Get the <span> element that closes the modal
+          var span = document.getElementsByClassName("close")[0];
+          
+          // When the user clicks on the button, open the modal
+          btn.onclick = function() {
+            modal.style.display = "block";
+          }
+          
+          // When the user clicks on <span> (x), close the modal
+          span.onclick = function() {
+            modal.style.display = "none";
+          }
+          
+          // When the user clicks anywhere outside of the modal, close it
+          window.onclick = function(event) {
+            if (event.target == modal) {
+              modal.style.display = "none";
+            }
+          }</script>
+  
+  
+  </script><%- include footer -%>

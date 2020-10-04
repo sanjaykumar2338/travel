@@ -1,0 +1,58 @@
+<div class="comentariosIndex"    >
+    <div  id="add1" class="conteudoComentarios" > 
+    <div class="headComentarios">
+      
+      <form action="/comentindex_save" method="POST" enctype="multipart/form-data">
+        <div class="form-group" style="line-height: 5px;">
+          <label for="files" class="btn5"><h2><i class="far fa-images"></i></h2></label>
+          <input type="file"   class="form-control-file" id="files" name="images"  accept="image/x-png,image/gif,image/jpeg" />
+        </div>
+        <div class="form__group" > <textarea type="text" class="form__input" id="comentarioindex" name="comentario" placeholder="Escreve aqui... "  style="width: 80%;font-family:Arial, FontAwesome;margin: auto;height: 80px; background-color: rgb(228, 227, 226);"   ></textarea>
+        </div>
+        
+         
+         
+      
+        
+        <input type="submit" class="butaocomentarios" value="Enviar" style="float: right;margin-top: 7px;border-radius: 5px;">
+            <style>
+            
+            label i {color: rgb(128, 126, 126);margin-left: 5%;margin-bottom:14px;}
+            .butaocomentarios:hover{
+             background-color: rgb(87, 86, 86);
+             cursor: pointer;}
+             .butaocomentarios{margin-right: 5%;}
+             #files {
+              opacity: 0;
+             position: absolute;
+            z-index: -1;
+               }
+               .comentariosIndex::-webkit-scrollbar {
+                 display: none;
+               }
+            </style>
+      </form>      
+    </div>
+   
+    <% if (coment.length > 0) {%>
+      <% coment.forEach((coment, index) => { %>
+  <div class="boxcomentarios" id="amostrar" style="margin: 10px;">
+   
+
+    <div class="headbox" id="headbox" >
+        <div class="fotouser"><img id="imguser" src="/imguser/<%= coment.userimage %>" alt=""></div>
+        <div class="nomeedata">
+          <span class="nomeusercoment"><h4><%= coment.username %></h4></span>
+          <span class="datacoment" style="font-size: 13px; color: darkgrey;"><%= coment.data.toDateString() %></span>
+        </div>
+    </div>
+    <div class="imgcoment" style="margin: auto; justify-content: center;width: 100%;"><img id="imgcoment" src="/imgcoment/<%= coment.image %>" alt="" ></div>
+   <div class="comentariofeito" style="margin-left: 30px; color:rgb(207, 205, 205);"><h4><%= coment.comentario %></h4></div>
+  </div>
+
+
+  <% }) %>
+  <% } else { %>
+      <p class="text-center">Não encontramos empresas <a href="/empresas" >Aqui</a> para voltar atrás.</p>
+  <% } %>  </div> <a ><div id='plus' onClick='resize()'>Mostrar mais</div> </a>
+  </div>

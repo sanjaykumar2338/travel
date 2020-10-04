@@ -1,0 +1,54 @@
+<%- include('./../header') %>
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <h1 class="h3 mb-4 text-gray-800">Manage Products</h1>
+			
+				<% if(locals.message.success){ %>
+			<div class="alert alert-success" role="alert">
+				<%=message.success%>
+			</div>
+			<% } %>
+		  
+		   <table id="product_table" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Sr. No.</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Image</th>
+				<th>Price</th>
+                <th>Size</th>
+				<th>Country</th>
+				<th>Category</th>
+				<th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+           
+		   <%  for (let index in result){ %>
+            <tr>
+                <th><%= parseInt(index)+parseInt(1) %>.</th>
+                <th><%= result[index].title %></th>
+				<th><%= result[index].description %></th>
+				<th><a target="_blank" href="./../uploads/product_images/<%= result[index].image %>"><%= result[index].image %></a></th>
+				<th><%= result[index].price %></th>
+				<th><%= result[index].size_name %></th>
+				<th><%= result[index].country_name %></th>
+				<th><%= result[index].category_name %></th>
+                <th><a href="./delete_product?id=<%= result[index].product_id %>&image=<%= result[index].image %>"><i class="fa fa-trash"></i></a> | <a href="./edit_product?id=<%= result[index].product_id %>"><i class="fas fa-edit"></a></i></th>
+            </tr>
+			<% } %>
+            
+        </tbody>
+    </table>	
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+	  
+<%- include('./../footer') %>

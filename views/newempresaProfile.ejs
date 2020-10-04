@@ -1,0 +1,568 @@
+
+  </script><%- include("partials/header") -%>
+  <style>
+  .nextbutton {
+      background-color: #FFFFFF;
+      border: 1px solid #C9C9C9;
+      color: #666666 !important;
+      display: inline-block;
+      height: 15px;
+      line-height: 14px;
+      padding: 4px;
+      text-align: center;
+      text-decoration: none;
+      width: 55px;
+      
+  }
+  #page_navigation{
+      padding-top:8px;
+      margin: 24px;
+  }
+  </style>
+  <div class="empresasMain">
+  <div class="sideBar">
+    <br>
+    <div class="empresasWorkSearch">
+    
+    <form method="GET" name="search_form" action="./../../index">
+     <div class="workSearchTitle">
+       
+       <h3>Transportes </h3>
+       <p>Portugal <i class="fas fa-arrows-alt-h"></i>   Suiça</p>
+       
+     </div>
+  
+     <div class="worksearch2">
+       
+       <div class="form__group">
+         <select type="text"   class="form__input select_country" id="pais2" placeholder="Filtrar por" required="" >
+           <option value="1" style="display: none;">País de origem...</option>
+             <option value="1">Portugal</option>
+             <option value="2">Suiça</option>
+         </select>
+        
+       </div>
+       
+       <div class="inflex">
+       <div class="form__group">
+       <select type="text"  class="form__input" name="from" id="from_country_start" placeholder="Filtrar por" required="" >
+          
+       </select>
+       
+       </div>
+       <div class="form__group">
+       <select type="text"  class="form__input" name="to" id="to_country_start" placeholder="Filtrar por" required="" >
+         
+       </select>
+       </div>
+       </div>
+      
+       <div class="form__group" id="btnsearch1">
+         <input type="submit" value="&#xF002; Procurar" class="form__input" id="name" placeholder=" Search" required=""style="font-family:Arial, FontAwesome" />  
+      
+       </div>
+     </div>
+     
+     </form>
+   </div>
+  
+    <div class="empresasWorkSearch" style="padding-left: 25px;">   
+     <form method="GET" action="./../../index">
+      <div class="form__group" id="btnsearch1">
+      <input type="submit" value="Clear filter" class="form__input" id="name" placeholder=" Search" required=""style="font-family:Arial, FontAwesome" /> 
+       </div>
+     </form>
+   </div>  
+    <br><br>
+    
+    <div class="empresasPublicidade" style="margin-right:0px;">
+    
+      <section class="news" id="publicidade1">
+        <header class="main-post-wrapper">
+            <div class="progress-bar progress-bar--primary hide-on-desktop">
+              <div class="progress-bar__fill"></div>
+            </div>
+            <div class="slides">
+              <article class="main-post main-post--active">
+                <div class="main-post__image">
+                  <img src="https://www.formula1.com/content/dam/fom-website/manual/Misc/2019-Races/Monaco2019/McLarenMonaco19.jpg.transform/9col/image.jpg" alt="New McLaren wind tunnel 'critical' to future performance, says Tech Director Key" />
+                </div>
+                <div class="main-post__content">
+                  <div class="main-post__tag-wrapper">
+                    <span class="main-post__tag">News</span>
+                  </div>
+                  <h1 class="main-post__title">New McLaren wind tunnel 'critical' to future performance, says Tech Director Key</h1>
+                  <a class="main-post__link" href="#">
+                        <span class="main-post__link-text">find out more</span>
+                        <svg
+                          class="main-post__link-icon main-post__link-icon--arrow"
+                          width="37"
+                          height="12"
+                          viewBox="0 0 37 12"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M0 6H36.0001M36.0001 6L31.0001 1M36.0001 6L31.0001 11"
+                            stroke="white"
+                          />
+                        </svg>
+                      </a>
+                </div>
+              </article>
+              <article class="main-post main-post--not-active">
+                <div class="main-post__image">
+                  <img src="https://www.formula1.com/content/dam/fom-website/sutton/2019/Hungary/Saturday/1017645792-LAT-20190803-_2ST5188.jpg.transform/9col-retina/image.jpg" alt="What To Watch For in the 2019 Hungarian Grand Prix" />
+                </div>
+                <div class="main-post__content">
+                  <div class="main-post__tag-wrapper">
+                    <span class="main-post__tag">Video</span>
+                  </div>
+                  <h1 class="main-post__title">What To Watch For in the 2019 Hungarian Grand Prix</h1>
+                  <a class="main-post__link" href="#">
+                        <svg
+                          class="main-post__link-icon main-post__link-icon--play-btn"
+                          width="30"
+                          height="30"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <circle
+                            cx="10"
+                            cy="10"
+                            r="9"
+                            stroke="#C20000"
+                            stroke-width="2"
+                          />
+                          <path d="M14 10L8 6V14L14 10Z" fill="white" />
+                        </svg>
+                        <span class="main-post__link-text">play video</span>
+                      </a>
+                </div>
+              </article>
+              <article class="main-post main-post--not-active">
+                <div class="main-post__image">
+                  <img src="https://www.formula1.com/content/dam/fom-website/manual/Misc/2019-Races/Austria-2019/Top3Austria2019.jpg.transform/9col-retina/image.jpg" alt="Hamilton wants harder championship fight from Leclerc and
+                      Verstappen" />
+                </div>
+                <div class="main-post__content">
+                  <div class="main-post__tag-wrapper">
+                    <span class="main-post__tag">News</span>
+                  </div>
+                  <h1 class="main-post__title">Hamilton wants harder championship fight from Leclerc and Verstappen
+                  </h1>
+                  <a class="main-post__link" href="#">
+                        <span class="main-post__link-text">find out more</span>
+                        <svg
+                          class="main-post__link-icon main-post__link-icon--arrow"
+                          width="37"
+                          height="12"
+                          viewBox="0 0 37 12"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M0 6H36.0001M36.0001 6L31.0001 1M36.0001 6L31.0001 11"
+                            stroke="white"
+                          />
+                        </svg>
+                      </a>
+                </div>
+              </article>
+            </div>
+          </header>
+          
+          
+        </section>
+    </div>
+     
+   </div>
+   <style>
+   .table-wrapper {
+      margin-top: 50px;
+   }
+   
+   .player-img {
+      width: 40px;
+      height: 40px;
+   }
+   
+   .add-player-form {
+      margin-top: 50px;
+   }
+   </style>
+  
+  <% if (player) { %>
+    
+      <div class="empresaProfile"style="width: 98%;height:500px; " >
+          <div class="empresaHead"  ><img style="background-position: center;  
+              background-repeat: no-repeat;
+              background-size: cover;
+            width: 50%; height: 500px;background-position: center; background-attachment: fixed;" src="/assets/img/<%= player.image %>">
+              
+              
+              <form class="rating-form2 centered" style="content:''" action="#" method="post" name="rating-movie">
+                          <fieldset class="form-group">
+                            
+                            
+                            
+                            <div class="form-item">
+                              
+                              <%if (rating == "" || !rating) { %>
+                                    <input id="rating-3" checked name="rating" type="radio" value="3" />
+                                    <label for="rating-3" data-value="3">
+                                    <span class="rating-star">
+                                      <i class="fa fa-star-o"></i>
+                                      <i class="fa fa-star"></i>
+                                    </span>
+                                     <span class="rating-star">
+                                      <i class="fa fa-star-o"></i>
+                                      <i class="fa fa-star"></i>
+                                    </span>
+                                     <span class="rating-star">
+                                      <i class="fa fa-star-o"></i>
+                                      <i class="fa fa-star"></i>
+                                    </span>
+                              </label>
+                            
+                              <% } %>
+                            
+                              <%if (rating == 5) { %>
+                                  <input id="rating-5" checked name="rating" type="radio" value="5" />
+                                  <label for="rating-5" data-value="5">
+                                    <span class="rating-star">
+                                      <i class="fa fa-star-o"></i>
+                                      <i class="fa fa-star"></i>
+                                    </span>
+                                    <span class="rating-star">
+                                      <i class="fa fa-star-o"></i>
+                                      <i class="fa fa-star"></i>
+                                    </span>
+                                     <span class="rating-star">
+                                      <i class="fa fa-star-o"></i>
+                                      <i class="fa fa-star"></i>
+                                    </span>
+                                     <span class="rating-star">
+                                      <i class="fa fa-star-o"></i>
+                                      <i class="fa fa-star"></i>
+                                    </span>
+                                     <span class="rating-star">
+                                      <i class="fa fa-star-o"></i>
+                                      <i class="fa fa-star"></i>
+                                    </span>
+                                  </label>
+                              <% } %>
+                              
+                              <%if (rating == 4) { %>
+                                  <input id="rating-4" checked name="rating" type="radio" value="4" />
+                                  <label for="rating-4" data-value="4">
+                                    <span class="rating-star">
+                                      <i class="fa fa-star-o"></i>
+                                      <i class="fa fa-star"></i>
+                                    </span>
+                                     <span class="rating-star">
+                                      <i class="fa fa-star-o"></i>
+                                      <i class="fa fa-star"></i>
+                                    </span>
+                                     <span class="rating-star">
+                                      <i class="fa fa-star-o"></i>
+                                      <i class="fa fa-star"></i>
+                                    </span>
+                                     <span class="rating-star">
+                                      <i class="fa fa-star-o"></i>
+                                      <i class="fa fa-star"></i>
+                                    </span>
+                                  </label>
+                              <% } %>
+                              
+                              <%if (rating == 3) { %>
+                              <input id="rating-3" checked name="rating" type="radio" value="3" />
+                              <label for="rating-3" data-value="3">
+                                <span class="rating-star">
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star"></i>
+                                </span>
+                                 <span class="rating-star">
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star"></i>
+                                </span>
+                                 <span class="rating-star">
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star"></i>
+                                </span>
+                              </label>
+                              <% } %>
+                              
+                              <%if (rating == 2) { %>
+                                  <input id="rating-2" checked name="rating" type="radio" value="2" />
+                                  <label for="rating-2" data-value="2">
+                                    <span class="rating-star">
+                                      <i class="fa fa-star-o"></i>
+                                      <i class="fa fa-star"></i>
+                                    </span>
+                                     <span class="rating-star">
+                                      <i class="fa fa-star-o"></i>
+                                      <i class="fa fa-star"></i>
+                                    </span>
+                                  </label>
+                              <% } %>
+                              
+                              <%if (rating == 1) { %>
+                              <input id="rating-1" checked name="rating" type="radio" value="1" />
+                              <label for="rating-1" data-value="1">
+                                <span class="rating-star">
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star"></i>
+                                </span>
+                                <span class="rating-star">
+                                  <i class="fa fa-star-o"></i>
+                                  <i class="fa fa-star"></i>
+                                </span>
+                              </label>
+                              <% } %>
+                            </div>
+                          </fieldset>
+                        </form>
+          <span><h1 class="tituloEmpresaProfile"><%= player.nome_empresa %></h1></span>
+          
+          <div class="empresaBody">
+              <br>
+              
+              <div class="prim">
+                   
+  
+  
+                 <h2>Sobre nós</h2>
+                 <div class="descricaoEmpresa"><h4><%= player.descricao %></h4>
+                  <h4><%= player.descricao2 %></h4>
+                  <h4><%= player.descricao3 %></h4>
+                 </div>
+  
+                 <h2>Classificação</h2>
+                 <div class="classificacao">
+                     <h5 style="text-align: center;">Classifica e dá a tua opinião sobre a nossa empresa.</h5>
+                     <div class="estrelas"><form class="rating-form main_form" action="#" method="post" name="rating-movie">
+                         <fieldset class="form-group">
+                           
+                           
+                           
+                           <div class="form-item">
+                             
+                             <input id="rating-5" name="rating" type="radio" value="5" />
+                             <label for="rating-5" data-value="5">
+                               <span class="rating-star">
+                                 <i class="fa fa-star-o"></i>
+                                 <i class="fa fa-star"></i>
+                               </span>
+                               
+                             </label>
+                             <input id="rating-4" name="rating" type="radio" value="4" />
+                             <label for="rating-4" data-value="4">
+                               <span class="rating-star">
+                                 <i class="fa fa-star-o"></i>
+                                 <i class="fa fa-star"></i>
+                               </span>
+                               
+                             </label>
+                             <input id="rating-3" name="rating" type="radio" value="3" />
+                             <label for="rating-3" data-value="3">
+                               <span class="rating-star">
+                                 <i class="fa fa-star-o"></i>
+                                 <i class="fa fa-star"></i>
+                               </span>
+                               
+                             </label>
+                             <input id="rating-2" name="rating" type="radio" value="2" />
+                             <label for="rating-2" data-value="2">
+                               <span class="rating-star">
+                                 <i class="fa fa-star-o"></i>
+                                 <i class="fa fa-star"></i>
+                               </span>
+                               
+                             </label>
+                             <input id="rating-1" name="rating" type="radio" value="1" />
+                             <label for="rating-1" data-value="1">
+                               <span class="rating-star">
+                                 <i class="fa fa-star-o"></i>
+                                 <i class="fa fa-star"></i>
+                               </span>
+                               
+                             </label>
+                             
+                            
+                       
+                             
+                             
+                           </div>
+                           
+                         </fieldset>
+                       </form></div>
+                         
+                     <div class="form__group" id="addDescricaoEmpresa">
+                         
+                         <textarea type="text" class="form__input" id="descricao" name="descricao" placeholder="Escreve aqui... "  style="width: 80%;font-family:Arial, FontAwesome;margin: auto;height: 70px;"  required="" ></textarea>
+                         
+                     </div>
+                     <div class="form__group" id="btnadd" style="width: 30%; border-radius: 5%; margin-top: 5px;">
+                         <input type="submit" id="btnadd" class="form__input"  value="Comentar" style="border-radius: 5%" >
+                         </div>
+                 </div>
+              
+                 <section class="section_listing">
+                      <% if(reviews) { %>
+                      <% reviews.forEach((player, index) => { %>	   
+                          <div class='commented card'>
+                              <span>
+                              <%= player.username %>  %>
+                              </span>
+                              
+                              <% if(player.review) { %> 		
+                              <h3><%= player.review %></h3>
+                              <% } else{ %>
+                              &nbsp;
+                              <% } %>
+                              <% 
+                                  
+                                  dte = new Date(player.created_at);
+                              
+                              %>
+                              <p class="date_format"><%= player.created_at  %></p>
+                          
+                          <div class="rating" style="width: 0px;display: inline-flex;">
+                          <% for(i=0;i<player.rating;i++) { %>
+                              <span style="color:gold">☆</span>
+                          <% } %>
+                          </div>
+                          </div>
+                      <% }); } %>
+                  </section>
+                 
+              <input type='hidden' id='current_page' />
+              <input type='hidden' id='show_per_page' />
+              <div id='page_navigation' style="text-align: center;"></div>	
+              </div>
+              <div class="segu">
+                  <h2>Informações</h2>
+                  <div class="actividade3">
+                      <h5>Actividade:</h5>
+                       
+                      <% if(player.categoria==1){ %>
+                      <h4>Transportes</h4>
+                      <% } %>
+                      <% if(player.categoria==2){ %>
+                      <h4>Limpezas</h4>
+                      <% } %>
+                      <% if(player.categoria==14) { %>
+                      <h4>Fitness</h4>
+                      <% } %>
+                      <% if(player.categoria=="") {%>
+                      <h4></h4>
+                      <% } %>
+                  </div>
+                  <br><br>
+                  <div class="contactos3">
+                      
+                      <h5>Contactos:</h5>
+                      <h4><%= player.email %></h4>
+                   
+                      <h4><%= player.telefone %></h4></div>
+                      <br>
+                      <br>
+  
+                      <div class="morada3">
+                          <h5>Morada:</h5>
+                          <% if(player.distrito_nome==52) { %>
+                          <h4>Zürich</h4>
+                          <% } %>
+                          
+                          <% if(player.distrito_nome==70) { %>
+                          <h4>Aargau</h4>
+                          <% } %>
+                      <h4><%= player.distrito_name %></h4>
+                      
+                      <h4><%= player.rua %></h4>
+                      
+                      <h4><%= player.codpos %></h4>
+                  </div>
+              </div>
+      </div>
+      </div>
+  
+  
+     
+     
+      <% } %>
+  
+      </div>
+      </div>
+  </div>
+  <footer>
+      <section class="footer">
+        
+          <ul class="list1" id="lista1">
+              <li><a href="aboutus.html">Sobre nós</a></li>
+              <li><a href="/store">Loja</a></li>
+              <li><a href="#">Cria a identidade da tua empresa</a></li>
+              <li><a href="servicos.html">Serviços</a></li>
+          </ul>
+          
+          <ul class="list1" id="lista2">
+              <li><a href="contato.html">Contacto</a></li>
+              <li><a href="parcerias.html">Parcerias</a></li>
+              <li><a href="paginasweb.html">Cria a tua página web</a></li>
+              <li><a href="#">Politicas de privacidade</a></li>
+          </ul>
+          <ul class="list1" id="lista3">
+            <li><a href="contato.html">Contacto</a></li>
+            <li><a href="parcerias.html">Parcerias</a></li>
+            <li><a href="paginasweb.html">Cria a tua página web</a></li>
+            <li><a href="#">Politicas de privacidade</a></li>
+        </ul>
+      </section>
+  </footer>
+  <nav class="design">
+      <span>© 2020 DS, All Rights Reserved</span>
+      
+      
+  
+  </nav>
+  
+  <script src="/routes/index.js"></script>
+  
+  
+  
+  
+  
+     <script src="/resources/js/transportsearch.js"></script>
+     <script src="/resources/js/jquery-ui.min.js"></script>
+     <script src="/resources/fullclip.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    
+     <script src="/resources/js/rate_and_review.js"></script>
+     <script src="/resources/js/review_pagination.js"></script>
+     <script src="/resources/js/player_details.js"></script>
+  
+  
+  
+  </body>
+  </html>
+  
+  
+  
+  
+     <script src="/resources/js/transportsearch.js"></script>
+     <script src="/resources/js/jquery-ui.min.js"></script>
+     <script src="/resources/fullclip.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    
+     <script src="/js/rate_and_review.js"></script>
+     <script src="/js/review_pagination.js"></script>
+     <script src="/resources/js/player_details.js"></script>
+  
+  
+  
+  </body>
+  </html>
+  
+  

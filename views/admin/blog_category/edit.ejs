@@ -1,0 +1,28 @@
+<%- include('./../header') %>
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <h1 class="h3 mb-4 text-gray-800">Edit Blog Category</h1>
+			<form action="./blog_save_edit_category?id=<%= result.id %>" method="POST">
+			  
+			  <div class="form-group">
+				<label for="exampleInputPassword1">Category Name</label>
+				<input type="text" class="form-control" value="<%= result.name %>" id="name" required placeholder="Category Name" name="name">
+			  </div>
+			  
+			  
+			  
+			  <button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+			
+			</form>
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+	  
+<%- include('./../footer') %>

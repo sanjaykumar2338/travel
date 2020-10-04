@@ -1,0 +1,639 @@
+!DOCTYPE html>
+<html lang="en">
+ <head>
+
+ 
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165286586-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165286586-1');
+</script>
+<% if (players.length > 0) {%>
+            
+  <% players.forEach((player, index) => { %>
+    <title>Empregos - <%= player.nome_emprego %> </title>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="description" content= "<%= player.descricao %>">
+ 
+  <link rel="image_src" href="https://www.portugal-la-fora.com/assets/imgjobs/<%= player.image %>"/>
+  <meta property="og:image"         content="https://www.portugal-la-fora.com/assets/imgjobs/<%= player.image %>" />
+  <meta property="og:description "      content="<%= player.descricao %>" />
+  <% }) %>
+                
+  <% } else { %>
+      <p class="text-center">No players found.</p>
+  <% } %>
+
+  <link href="/blog/resources/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/resources/css/empresas.css">
+  <link rel="stylesheet" type="text/css" href="/resources/css/conteudo.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <script type="text/javascript"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="/resources/favicon/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Oswald:wght@500&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script data-ad-client="ca-pub-1839405568230983" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
+
+</head>
+<body>
+
+  <div id="fb-root"></div>
+<script>
+window.fbAsyncInit = function() {
+FB.init({appId: '706421426851771', status: true, cookie: true,
+xfbml: true});
+};
+(function() {
+var e = document.createElement('script'); e.async = true;
+e.src = document.location.protocol +
+'//connect.facebook.net/pt_PT/all.js';
+document.getElementById('fb-root').appendChild(e);
+}());
+</script>
+  <header>
+    <div class="content" id="navbar" style="width: 100%;">
+        <div id="logo">
+          <a href="/" style="text-decoration: none;"> <img  src="/resources/images/Color logo - no background.png"> </a>
+       </div>
+    
+       <div class="tutorial" id="dropmenu" style="position: relative;">
+        <ul id="dropdown">
+            
+            <li><a >Empresas </i></a>
+                <ul>
+                  <li><a href="/empresas">Empresas</a> </li>
+                  <li><a href="/charge"> Adicionar empresas</a></li>
+                  </ul>
+                </li>
+
+                <li><a >Empregos </i></a>
+                  <ul>
+                    <li><a href="/empregosall">Empregos</a> </li>
+                    <li><a href="#"> Adicionar empregos</a></li>
+                    </ul>
+                  </li>
+
+            <li><a >Artigos </i></a>
+            <ul>
+                    <li><a href="/artigos">Ver todos os artigos</a></li>
+                   
+                  </ul></li>
+            <li><a >Viagens </i></a>
+            <ul>
+                    <li>Sobre as nossas viagens <li></li>
+                  </ul></li>  
+            <li><a >Mais </a>
+                    <ul>
+                            <li><a href="/sobrenos"> Sobre nós</a></li>
+                              <li><a href="/contato">Contatos</a></li>
+                            
+                          </ul></li>         
+                  <li id="atuaconta"><a ><i class="fas fa-user"></i>  A tua conta </a >
+                    <ul>
+                      <li><a href="/login">Entra</a> </li>
+                      <li><a href="/signup">Registra-te</a> </li>
+                      <li><a href="/profile">O teu perfil</a></li>
+                      
+                    </ul></li>   
+
+        </ul>     
+     </div>  
+     
+      
+      <div onclick="myFunction7()" class="device" id="device">
+       <a  id="burger" class="open-main-nav">
+       <span class="burger"><i  class="fas fa-bars"></i></span></a>
+        
+       
+       
+       <nav class="main-nav" id="main-nav" >
+         
+       <ul >
+         <a href=""><span onclick="myFunction10()" id="x">X</span></a>
+       <li><a href="/index">Home </a></li>
+       <li><a href="#" onclick="myFunction1()">Empresas <i class="fas fa-chevron-down fa-xs"></i></a>
+           <ul  id="empresas" style="display:none;">
+             <li><a href="/empresas">Empresas </a> </li>
+             <li><a href="/charge"> Adicionar empresas </a></li>
+             </ul>
+           </li>
+       <li><a href="#" onclick="myFunction2()"> Transportes<i class="fas fa-chevron-down fa-xs"></i></a>
+         <ul id="empresas2">
+           <li><a href="#">Procurar Transportes</a> </li>
+         
+           
+         </ul></li>
+       <li><a href="#" onclick="myFunction3()" >Artigos<i class="fas fa-chevron-down fa-xs"></i></a>
+       <ul id="empresas3">
+               <li><a href="/artigos">Ver todos os artigos</a></li>
+              
+             </ul></li>
+       <li><a href="#" onclick="myFunction4()" >Viagens <i class="fas fa-chevron-down fa-xs"></i></a>
+       <ul id="empresas4">
+               <li>Sobre as nossas viagens <li></li>
+             </ul></li>  
+       <li><a href="#" onclick="myFunction5()" >Mais <i class="fas fa-chevron-down fa-xs"></i></a>
+               <ul id="empresas5">
+                       <li><a href="/sobrenos"> Sobre nós</a></li>
+                         <li><a href="/contato">Contatos</a></li>
+                       
+                     </ul></li>         
+             <li><a href="#" onclick="myFunction8()" ><i class="fas fa-user"></i>  A tua conta  <i class="fas fa-chevron-down fa-xs"></i></a >
+               <ul id="empresas6">
+                 <li><a href="/login">Entra</a> </li>
+                 <li><a href="/signup">Registra-te</a> </li>
+                 <li><a href="/profile">O teu perfil</a></li>
+                 
+               </ul></li> 
+               <ul id="empresas10" style="display: none;">
+                 <li>Sobre as nossas viagens </li>
+               </ul>  
+
+           </ul>   
+        </nav>
+     </div>
+       
+           <script>
+               function myFunction1() {
+                  document.getElementById("empresas").style.display =  ((empresas.style.display!='block') ? 'block' : 'none');
+                 }
+                 function myFunction2() {
+                  document.getElementById("empresas2").style.display =  ((empresas2.style.display!='block') ? 'block' : 'none');
+                 }
+                 function myFunction3() {
+                  document.getElementById("empresas3").style.display =  ((empresas3.style.display!='block') ? 'block' : 'none');
+                 }
+                 function myFunction4() {
+                  document.getElementById("empresas4").style.display =  ((empresas4.style.display!='block') ? 'block' : 'none');
+                 }
+                 function myFunction5() {
+                  document.getElementById("empresas5").style.display =  ((empresas5.style.display!='block') ? 'block' : 'none');
+                 }
+                 function myFunction8() {
+                  document.getElementById("empresas6").style.display =  ((empresas6.style.display!='block') ? 'block' : 'none');
+                 }
+                 function myFunction7() {
+                  document.getElementById("main-nav").style.display =  ((empresas10.style.display!='block') ? 'block' : 'none');
+                 }
+                 function myFunction10() {
+                   var x = document.getElementById("main-nav");
+                 if (x.style.display === "block") {
+                  x.style.display = "none";
+                     } else {
+                 x.style.display = "block";
+                   }
+                   }
+                
+
+
+                 function myFunction9(x) {
+ if (x.matches) { // If media query matches
+   document.getElementById("burger44").style.display = "block";
+ } else {
+   document.getElementById("burger44").style.display = "none";
+ }
+}
+
+var x = window.matchMedia("(max-width: 1000px)")
+myFunction(x) // Call listener function at run time
+x.addListener(myFunction9) 
+
+
+             </script>
+
+       <style>
+         #logo img{width: 17%;height:40px ; position: absolute; margin-top: -20px;margin-left: -105px;}
+         #device ul a{
+           text-decoration: none;
+           color: white;
+           
+         }
+         #main-nav ul li a{
+           line-height: 50px;
+           font-size: 25px;
+           margin-left: 10px;
+           
+         }
+        
+        
+         #device ul{
+           float: left;
+         list-style: none;
+         width: 100%;
+         margin-left:-310px ;
+         position: fixed;
+         background-color: rgb(87, 86, 86);
+         height: 100%;
+       }
+
+         #device{
+         display: none;
+         margin: auto;
+         justify-content: center;
+        
+         }
+         .burger{
+           margin: auto;
+           justify-content: center;
+
+         }
+         .burger i{font-size:30px ;
+         margin: auto;
+         position: fixed;
+         justify-content: center;
+       margin-top: -10px;
+     margin-left: -10%;}
+     .burger i:hover{
+       cursor: pointer;
+     }
+
+
+         #main-nav {
+           display:none;
+          position: relative;
+           padding-top: 0px;
+           background-color: rgb(102, 102, 102);
+           height: 700px;
+           
+           margin-top: -10px;
+           list-style: none;
+           
+         }
+         #x{ color: white;
+         font-size: 34px;}
+
+          #main-nav ul li ul {
+           display: none;
+            margin-left: 20px;
+            
+           border: #9da1a1;
+                border-top-style: solid;
+           border-width: thin;
+             border-bottom-style:solid ;
+           padding-bottom: -20px;
+               margin-bottom: 10px;
+           height: fit-content;
+
+           }
+           #main-nav ul li ul {
+             margin-left: -40px;
+
+            
+            color: rgb(218, 216, 216);
+
+           }
+           .empresasBusca{display:none;}
+            
+            .empresasBusca{
+               background-color:rgb(141, 137, 137); 
+                text-decoration: none;
+               }
+
+               .empresasBusca:hover{
+              cursor: pointer;
+                           background-color: rgb(128, 126, 126);
+                   }
+                   .sideBar2{display:none;}
+                   #sidebarartigos2{display: none;}
+                  footer{margin-top: -150px;}
+                 
+
+
+
+
+
+        /* Main menu positionning */
+        @media all and  (max-width: 1000px) {
+          #device{
+          display: block;
+          }
+          #logo img{width: 18%;height:38px ; position: absolute; margin-top: -20px;margin-left: 5%;}
+         
+        
+         }
+         @media all and  (max-width: 950px) {
+           .empresasBusca{display:contents;}
+           #logo img{width: 36%;height:40px ; position: absolute; margin-top: -20px;margin-left: 5%;}
+         
+           
+           .sidebarpublicidade2{display: block;}
+           #sidebarartigos2{display: block;}
+           .sideBar2{display: block;
+           }
+           .sidebarpublicidade{display: none;}
+           #sidebarartigos{display: none;}
+           .burger i{
+            margin-left: 30px;
+          }
+          main{
+            min-height:100% ;
+            margin: 10px;
+          }
+          #logo{margin-left: 20px;}
+          
+           
+          
+          #device{
+          display: block;
+          margin: auto;
+          float: right;
+          }
+          #navbar{
+            max-width: 950px;
+          }
+          #main-nav{overflow: hidden; }
+          #contactos{
+            display: none;
+            
+          }
+
+          }
+          @media all and  (max-width: 950px) {
+            #device ul{margin-left: -210px;
+           }
+          .burger i{
+            margin-left: 30px;
+          }
+          .comentariosIndex{
+            display: block; width: 100%;}
+          }
+         
+          @media  (max-width: 950px) {
+        .empresasMain{
+             display: block;
+             margin: auto;
+                       }
+         .destaque1{ display: block;}
+         .rightcards{display: none;}
+       }
+        @media  (max-width: 650px) {
+         #logo img{width: 48%;height:50px ; position: absolute; margin-top: -20px;margin-left: 0;}
+         .burger i{
+            margin-left: 100px;
+          }
+         
+       }
+
+
+         </style>
+      
+        <div id="contactos">
+           
+        </div>
+    </div>
+</header>  
+<script>let burger = document.getElementById('burger'),
+  nav    = document.getElementById('main-nav'),
+  slowmo = document.getElementById('slowmo');
+
+burger.addEventListener('click', function(e){
+ this.classList.toggle('is-open');
+ nav.classList.toggle('is-open');
+});
+
+slowmo.addEventListener('click', function(e){
+ this.classList.toggle('is-slowmo');
+});
+
+/* Onload demo - dirty timeout */
+let clickEvent = new Event('click');
+
+window.addEventListener('load', function(e) {
+ slowmo.dispatchEvent(clickEvent);
+ burger.dispatchEvent(clickEvent);
+ 
+ setTimeout(function(){
+   burger.dispatchEvent(clickEvent);
+   
+   setTimeout(function(){
+     slowmo.dispatchEvent(clickEvent);
+   }, 3500);
+ }, 5500);
+});</script>
+
+
+
+<style>
+   footer{margin-top: 20px;}
+  .sobrenosMenu{width: 100%;}
+  .sobrenosMenu img{width: 600px;height: 300px;}  
+   @media all and  (max-width: 750px) {
+    .sideBar{display: none;}
+    .caixa{width: 94%;padding-bottom: 20px;}
+   footer{margin-top: 10px;}
+      .footer{ height: 200px; ;
+  line-height: 15px;}      
+  .footer li{
+    padding-bottom: 20px;}    
+    .sobrenosMenu img{width: 96%;position: relative;  }  
+   
+    .sketchy{margin-bottom: 10px;}
+    .sobrenosMenu{height: 105%;}
+   
+    
+   
+  
+  }
+</style>
+
+<div class="empresasMain">
+<div class="sideBar" style="margin-top: 10px;">
+    <div class="empresasWorkSearch1" style=" height: 130px; padding-top: 10px; width: 98%; margin-left: 0; margin-bottom: 0px; margin-top: 50px; " >
+       <div class="workSearchTitle">
+         <a href="/empresas">
+         <h3>Transportes </h3>
+         <p>Portugal <i class="fas fa-arrows-alt-h"></i>   Suiça</p>
+         <h1><i class="fas fa-search"></i></h1>
+       </a>
+       </div>
+       
+     </div>  
+       
+     
+    
+     <br>
+     
+     <div class="sidebarpublicidade" style="margin-bottom: 5px;">
+      <img style="width: 98%;height: 240px;" src="/assets/img/Rebeka_Collier54@yahoo.com.jpeg"/>
+      <h2 style="position: absolute; margin-top: -250px;width: 200px;color: white;margin-left: 50px;">Espaço para publicidade</h2>
+    </div>
+  
+    <section id="sidebarartigos" class="cards-wrapper">
+      <% if (sidenews.length > 0) {%>
+        <% sidenews.forEach((sidenew, index) => { %>
+      
+     
+       <div class="sidenewcard">
+        <a href="./conteudo?id=<%= sidenew.id %>"> <div class="imgside">
+           <img src="/uploads/blog_images/<%= sidenew.image %>" alt="">
+         </div>
+         <div class="date"><%= sidenew.created_at.toDateString() %></div>
+         <p  ><%= sidenew.blog_title %></p>
+         <div class="tag" style="font-weight: 600px;"><h4>Artigos</h4></div>
+  
+       </div></a>
+      
+        <style>
+          .sidenewcard{
+            position: relative;
+          }
+          .sidenewcard:hover{
+            filter: brightness(150%);
+            opacity: 0.9;
+          }
+          .imgside img{
+            height: 250px;
+            width: 97%;
+            position: relative;
+            filter: brightness(50%);
+          }
+          .sidenewcard .date{
+            position:absolute;
+            top: 8px;
+             right: 16px;
+             color:white;
+             font-size: 12px;
+          }
+                             
+             .sidenewcard p{
+               color:white;
+               position: absolute;
+               top: 35%;
+               left: 5%;
+              
+              font-size: 20px;
+             }
+             .sidenewcard .tag{
+              color:white;
+               position: absolute;
+               bottom: 8px;
+                   left: 16px;
+                   background-color: grey;
+                   padding:13px;
+                   border-radius:5px;
+                   font-weight: 600px;
+                   font-family: 'Open Sans', sans-serif;
+                   line-height: 0px;
+                   padding-top: 0px;
+                   padding-bottom: 1px;
+                  
+                   
+  
+             }
+        </style>
+      <% }) %>
+  
+      <!-- https://images.unsplash.com/photo-1520839090488-4a6c211e2f94?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=38951b8650067840307cba514b554ba5&auto=format&fit=crop&w=1350&q=80 -->
+    </section>
+    
+    <% } else { %>
+      <p class="text-center">Não encontramos noticias <a href="/empresas" >Aqui</a> para voltar atrás.</p>
+    <% } %>
+  
+    </div>
+    <div class="page">
+     
+        <div class="job">
+            <% if (players.length > 0) {%>
+            
+                <% players.forEach((player, index) => { %>
+          
+            <div class="jobcontainer">
+                <img id="imagem" src="/assets/imgjobs/<%= player.image %>"/>
+                <div class="dados">
+                    <span class="descricaojob"><h3><%= player.nome_emprego %></h3></span>
+                    <span class="empresajob"><%= player.nome_empresa %></span>
+                    <span class="cityjob"><%= player.distrito_name %></span>
+                    <div class="footerjob">
+                     
+               
+                          <span class="datajob"><%= player.criado_em.toDateString() %></span>
+                          <div class="fb-share-button"  data-href="https://www.portugal-la-fora.com/emprego/?id=<%= player.id %>" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.portugal-la-fora.com%2Femprego/?id=<%= player.id %>%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore"></a></div>
+                
+                    </div>      
+                </div>
+            </div> 
+           
+            <div class="descricao"><%= player.descricao %></div><br>
+            <div class="descricao"><%= player.descricao2 %></div><br>
+            <div class="descricao"><%= player.descricao3 %></div>
+                <h4><%= player.email %></h4>
+                <h4><%= player.telefone %></h4>
+                <div class="link"><a href="<%= player.link %> "> ir para o anúncio original</a></div>
+               
+                
+                
+                
+                <script type="text/javascript">
+                  $(document).ready(function(){
+                  $('#share_button').click(function(e){
+                  e.preventDefault();
+                  FB.ui(
+                  {
+                  method: 'share',
+                  name: 'This is the content of the "name" field.',
+                  href: 'https://www.portugal-la-fora.com/emprego/?id=<%= player.id %>',
+                  image: 'https://www.portugal-la-fora.com/assets/imgjobs/<%= player.image %>',
+                  caption: 'Top 3 reasons why you should care about your finance',
+                  description: "What happens when you don't take care of your finances? Just look at our country -- you spend irresponsibly, get in debt up to your eyeballs, and stress about how you're going to make ends meet. The difference is that you don't have a glut of taxpayers…",
+                  message: ""
+                  });
+                  });
+                  });
+                  </script>
+                
+                
+                
+                
+                <% }) %>
+                
+            <% } else { %>
+                <p class="text-center">No players found. Go <a href="/add" >here</a> to add players.</p>
+            <% } %>
+        
+           
+           
+        </div>
+    </div>
+
+    <style>
+      .fb-share-button{margin-left:350px;  position: absolute;}
+        .page{background-color: rgb(255, 255, 255);margin-top: 0px;}
+        .searchwork{background-color: rgb(66, 66, 66); float: left; width: 100%;}
+        .jobcontainer{display: inline-flex; border-style: solid;border-color: rgb(179, 177, 177);border-width: 1px;
+          color: dimgray; border-radius: 5px; width: 90%; margin-bottom: 20px;}
+        .job{width: 85%; margin-left: 10%; margin-top: 60px;}
+        #imagem{width: 200px; height: 200px;border-radius: 5px;}
+        .dados{margin-left: 20px; font-weight: 600; width: 1005;}
+        .footerjob{margin-top: 60px; position: absolute;}
+        .footerjob a{margin-left:350px ; background-color: slategray;; padding: 5px 20px; 
+          color:rgb(255, 255, 255);text-decoration: none;border-radius: 5px;}
+          .footerjob a:hover{background-color: rgb(190, 192, 194);}
+        .datajob{color: rgb(165, 164, 164);}
+        .page #name{width: 290px;}
+        .page #cantao{width: 290px;}
+        .descricao{width: 80%;line-height: 30px; font-size: 16px;  font-family: "Open Sans", "sans-serif"; font-weight: 600;
+      margin-top: 40px; margin-left: 5%;}
+        .link{margin-top: 20px;font-weight: bold;font-size: 20px;}
+
+
+    </style>
+  
+ 
+
+
+</div>
+
+<% include footer.ejs %>

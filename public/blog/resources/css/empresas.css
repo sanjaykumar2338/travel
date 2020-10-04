@@ -1,0 +1,244 @@
+.empresasMain{
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
+.sideBar{
+    grid-column: 1/1;
+   
+ 
+    
+}
+#empresaShow{
+  padding-left: 80px;
+}
+
+.empresasShow{
+    grid-column: 2/2;
+    background-color: rgb(204, 203, 202);
+    display: grid;
+  grid-template: repeat(4,340px) / repeat(3, 1fr);
+     row-gap: 10px;
+     column-gap: 8px;
+     justify-content: space-between;
+     overflow: hidden;
+     padding-left: 180px;
+     
+    
+}
+
+.empresasShow .card{
+    width: 320px;
+    height: 300px;
+   
+     
+    
+}
+
+.thumb{
+    position: static;
+}
+
+  
+  .wrapper {
+    grid-column: 1/3;
+    padding: 20px;
+    margin: 20px auto;
+  
+    border-radius: 4px;
+    height: 20px;
+  }
+  
+ 
+  
+  /* ------------------------------ PAGINTION BEGIN ------------------------------ */
+  .pager {
+    margin: 0 0 3.75rem;
+    font-size: 0;
+    text-align: center;
+  }
+  .pager__item {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 1.125rem;
+    font-weight: bold;
+    margin: 0 2px;
+  }
+  .pager__item.active .pager__link {
+    background-color: #575655;
+    border-color: #707070;
+    color: #fff;
+    text-decoration: none;
+  }
+  .pager__item--prev svg, .pager__item--next svg {
+    width: 8px;
+    height: 12px;
+  }
+  .pager__item--next .pager__link svg {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+    -webkit-transform-origin: center center;
+            transform-origin: center center;
+  }
+  .pager__link {
+    position: relative;
+    border-radius: 4px;
+    display: block;
+    text-align: center;
+    width: 2.625rem;
+    height: 2.625rem;
+    line-height: 2.625rem;
+    margin-left: -1px;
+    color: #2f3640;
+    text-decoration: none;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  .pager__link:hover, .pager__link:focus, .pager__link:active {
+    background-color: #575655;
+    border-color: #575655;
+    color: #fff;
+    text-decoration: none;
+  }
+  .pager__link:hover svg path, .pager__link:focus svg path, .pager__link:active svg path {
+    fill: #fff;
+  }
+  .pager .pager__item.active + .pager__item .pager__link, .pager .pager__item:hover + .pager__item .pager__link {
+    border-left-color: #575655;
+  }
+  
+  @media screen and (max-width: 576px) {
+    .pager__item {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+    .pager__item.active, .pager__item:first-of-type, .pager__item:last-of-type, .pager__item:nth-of-type(2), .pager__item:nth-last-of-type(2) {
+      position: initial;
+      top: initial;
+      left: initial;
+    }
+    .pager__item.active + li {
+      position: initial;
+      top: initial;
+      left: initial;
+    }
+  }
+  /* ------------------------------ PAGINTION END ------------------------------ */
+  #searchworkEmpresas{
+    margin-top: 60px;
+  }
+  .empresasWorkSearch {
+    grid-column: 1/1;
+    grid-row: 2/2;
+    margin: auto;
+    align-items: center;
+    
+}
+.worksearch2{
+    margin-left: 25px;
+
+}
+
+  .empresasWorkSearch #pais2{
+      width: 150px;
+      margin: 0;
+      margin-bottom: 5px;
+  }
+  .empresasWorkSearch .inflex{
+      display: block;
+  }
+  .empresasWorkSearch .inflex select{
+    width: 150px;
+    margin: 0;
+    margin-bottom: 5px;
+}
+#btnsearch1 {
+    padding-left: 10px;
+    margin: 0;
+}
+
+.workSearchTitle{
+    color: white;
+    text-align: center;
+    line-height: 5px;
+}
+
+
+
+
+
+.empresasAdd{
+    grid-column: 2/2;
+   
+    background-color: rgb(204, 203, 202);
+    display: grid;
+  grid-template: repeat(6) / repeat(3, 1fr);
+     row-gap: 40px;
+     column-gap: 8px;
+     justify-content: space-between;
+}
+.empresasAddtitle{
+    text-align: center;
+    grid-column: 1/4;
+    grid-row: 1/1;
+}
+.empresasAdd input{-webkit-box-shadow: 0 8px 6px -6px rgb(100, 99, 99);
+    -moz-box-shadow: 0 8px 6px -6px rgb(100, 99, 99);
+         box-shadow: 0 8px 6px -6px rgb(100, 99, 99);
+    
+}
+.empresasAdd select{ 
+    -webkit-box-shadow: 0 8px 6px -6px rgb(100, 99, 99);
+    -moz-box-shadow: 0 8px 6px -6px rgb(100, 99, 99);
+         box-shadow: 0 8px 6px -6px rgb(100, 99, 99);
+    width:100px ;}
+
+    .empresasAdd label{
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 600;
+        font-size: 15px;
+    }
+    #adddescricao{
+        display: block;
+    }
+    #addEmpresasDispaly{
+        padding-top: 0px;
+    }
+    #addDescricaoEmpresa{
+        grid-column: 1/4;
+    }
+    #btnadd{
+        grid-column: 1/4;
+        margin: auto;
+        background-color: #56585b;
+        color: white;
+        -webkit-box-shadow: 0 8px 6px -6px rgb(100, 99, 99);
+            -moz-box-shadow: 0 8px 6px -6px rgb(100, 99, 99);
+                 box-shadow: 0 8px 6px -6px rgb(100, 99, 99);
+    }
+    #btnadd input:hover{
+      background-color: #838282;
+     cursor: pointer;
+     transition: ease-in .4s;
+      
+     }
+
+    #btnAddEmpresa input{
+        background-color: #56585b;
+        color: white;
+        -webkit-box-shadow: 0 8px 6px -6px rgb(100, 99, 99);
+            -moz-box-shadow: 0 8px 6px -6px rgb(100, 99, 99);
+                 box-shadow: 0 8px 6px -6px rgb(100, 99, 99);
+                 
+       }
+       
+       #btnAddEmpresa input:hover{
+         background-color: #838282;
+        cursor: pointer;
+        transition: ease-in .4s;
+         
+        }
+        textarea{-webkit-box-shadow: 0 8px 6px -6px rgb(100, 99, 99);
+            -moz-box-shadow: 0 8px 6px -6px rgb(100, 99, 99);
+                 box-shadow: 0 8px 6px -6px rgb(100, 99, 99);}

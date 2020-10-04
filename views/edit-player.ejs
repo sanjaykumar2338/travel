@@ -1,0 +1,293 @@
+<%- include("partials/header") -%>
+<div class="empresasMain">
+
+
+    <div class="sideBar" style="margin-top: 10px;">
+      <div class="empresasWorkSearch1" style=" height: 130px; padding-top: 10px; width: 98%; margin-left: 0; margin-bottom: 10px; margin-top: 50px; " >
+         <div class="workSearchTitle">
+           <a href="/empresas">
+           <h3>Transportes </h3>
+           <p>Portugal <i class="fas fa-arrows-alt-h"></i>   Suiça</p>
+           <h1><i class="fas fa-search"></i></h1>
+         </a>
+         </div>
+         
+       </div>  
+         
+       
+      
+       <br>
+       
+       <div class="sidebarpublicidade" style="margin-bottom: 15px;">
+        <img style="width: 98%;height: 240px;" src="/assets/img/Rebeka_Collier54@yahoo.com.jpeg"/>
+        <h2 style="position: absolute; margin-top: -250px;width: 200px;color: white;margin-left: 50px;">Espaço para publicidade</h2>
+      </div>
+    
+      <section id="sidebarartigos" class="cards-wrapper">
+        <% if (sidenews.length > 0) {%>
+          <% sidenews.forEach((sidenew, index) => { %>
+        
+       
+         <div class="sidenewcard">
+          <a href="./conteudo?id=<%= sidenew.id %>"> <div class="imgside">
+             <img src="/uploads/blog_images/<%= sidenew.image %>" alt="">
+           </div>
+           <div class="date"><%= sidenew.created_at.toDateString() %></div>
+           <p  ><%= sidenew.blog_title %></p>
+           <div class="tag" style="font-weight: 600px;"><h4>Artigos</h4></div>
+    
+         </div></a>
+        
+          <style>
+            .sidenewcard{
+              position: relative;
+            }
+            .sidenewcard:hover{
+              filter: brightness(150%);
+              opacity: 0.9;
+            }
+            .imgside img{
+              height: 250px;
+              width: 97%;
+              position: relative;
+              filter: brightness(50%);
+            }
+            .sidenewcard .date{
+              position:absolute;
+              top: 8px;
+               right: 16px;
+               color:white;
+               font-size: 12px;
+            }
+                               
+               .sidenewcard p{
+                 color:white;
+                 position: absolute;
+                 top: 35%;
+                 left: 5%;
+                
+                font-size: 20px;
+               }
+               footer{margin-top: 70px;}
+               .sidenewcard .tag{
+                color:white;
+                 position: absolute;
+                 bottom: 8px;
+                     left: 16px;
+                     background-color: grey;
+                     padding:13px;
+                     border-radius:5px;
+                     font-weight: 600px;
+                     font-family: 'Open Sans', sans-serif;
+                     line-height: 0px;
+                     padding-top: 0px;
+                     padding-bottom: 1px;}
+                     @media all and  (max-width: 750px) {
+                 .empresasAdd{margin-left: -50px;min-height: 100%; display: block;}
+                 footer{margin-top: 0px;}
+                 .footer{ height: 230px; margin-left: -26px;
+                     line-height: 15px;}      
+                   .footer li{
+                     padding-bottom: 20px;}
+                .empresasAdd label{display: contents; height: 70px; font-size: 18px;} 
+                .form__group{margin-bottom: 30px;} 
+                .empresasShow{height: 1800px;}   
+
+               
+                    
+                     
+    
+               }
+          </style>
+        <% }) %>
+    
+        <!-- https://images.unsplash.com/photo-1520839090488-4a6c211e2f94?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=38951b8650067840307cba514b554ba5&auto=format&fit=crop&w=1350&q=80 -->
+      </section>
+      
+      <% } else { %>
+        <p class="text-center">Não encontramos noticias <a href="/empresas" >Aqui</a> para voltar atrás.</p>
+      <% } %>
+    
+      </div>
+   
+
+<% if (player.length > 0) {%>
+    <% player.forEach((player, index) => { %>
+      <div class="empresasShow" id="empresaShow">
+          
+        <form class="add-player-form" action="/editplayer" method="post"  enctype="multipart/form-data">
+            <div class="empresasAdd"> 
+              <div class="empresasAddtitle">
+                  <h2>Altera a tua empresa</h2>
+              </div>
+
+            
+               
+                <input type="text" class="form__input" id="nome_empresa" name="id"  value="<%= player.id %>"  style="width: 250px;font-family:Arial, FontAwesome;margin: auto; display: none;"  required />
+                 
+           
+
+
+
+              <div class="form__group">
+                  <label for="name" class="form__label">Nome da empresa</label>
+                  <input type="text" class="form__input" id="nome_empresa" name="nome_empresa"  value="<%= player.nome_empresa %>"  style="width: 250px;font-family:Arial, FontAwesome;margin: auto;"  required />
+                   
+              </div>
+              <div class="form__group">
+                  <label for="name" class="form__label">E-mail</label>
+                  <input type="text" class="form__input" id="email" name="email" value="<%= player.email %>"   style="width: 250px;font-family:Arial, FontAwesome;margin: auto;"  required />
+              </div>
+
+              <% }) %>
+              <% } else { %>
+            <% } %>
+              <div class="form__group">
+                <label for="name" class="form__label">Categoria</label>
+                <select type="text" class="form__input category_choose" id="slogan" name="categoria" placeholder="Adiciona slogan de apresentação "  style="width: 250px;font-family:Arial, FontAwesome;margin: auto;"  required="" >
+                  <% if (results3.length > 0) {%>
+                    <% results3.forEach((result, index) => { %>
+                  <option value="<%= result.id %>"><%= result.actividade %></option>
+                  <% }) %>
+                  <% } else { %>
+                <% } %>
+                
+                </select>
+            </div>
+
+            
+              
+            
+            
+                
+                <div class="form__group transport">
+        <h5>Escolhe os Distritos onde <br>a tua empresa trabalha</h5>
+                 <% if (results.length > 0) {%>
+          <% results.forEach((result, index) => { %>
+            <input type="checkbox" id="vehicle1"  name="from_country_start" value="<%= result.id %>">
+            <label  name="from_country_start"><%= result.distrito_name %></label><br>
+       
+        <% }) %>
+        <% } else { %>
+      <% } %>
+                
+                </div>
+                
+                
+                
+                
+                <div class="form__group transport">
+        <h5>Escolhe os Cantões onde <br>a tua empresa trabalha</h5>
+        <% if (results2.length > 0) {%>
+          <% results2.forEach((result2, index) => { %>
+            <input type="checkbox" id="vehicle1"  name="to_country_start" value="<%= result2.id %>">
+            <label  name="to_country_start"><%= result2.distrito %></label><br>
+       
+        <% }) %>
+
+      <% } %>
+      
+      </div>
+      <div class="form__group transport">
+        <label>Tipo de transporte</label> <br>
+<input type="checkbox" id="mercadorias" name="tipoTransporte" value="mercadorias">
+<label for="mercadorias">Mercadorias</label><br>
+<input type="checkbox" id="pessoas" name="tipoTransporte" value="pessoas">
+<label for="pessoas">Pessoas</label><br>
+      </div>
+      <% if (player.length > 0) {%>
+        <% player.forEach((player, index) => { %>
+
+
+
+
+
+              <div class="form__group">
+                <form class="form__group" action="/action_page.php">
+                    <label for="myfile" class="form__label">Imagem sobre a empresa</label>
+                    <input type="file"  class="form-control-file" id="files" name="images" value="/public/assets/img/<%= player.image %>" required  accept="image/x-png,image/gif,image/jpeg" /></form>
+                </div>
+          
+             
+              <div class="form__group">
+                  <label for="name" class="form__label">Telefone(opcional)</label>
+                  <input type="number" class="form__input" id="telefone" name="telefone" value="<%= player.telefone %>"   style="width: 250px;font-family:Arial, FontAwesome;margin: auto;"   />
+                   
+              </div>
+              <div class="form__group">
+                  <label for="name" class="form__label">Pais</label>
+                  <select type="text"   class="form__input" id="pais" name="pais"  required="" style="width: 250px;margin: auto;" >
+                    <option selected><%= player.pais %>"</option>
+                   
+                      <option value="1">Portugal</option>
+                      <option value="2">Suiça</option>
+                  </select>
+                 
+                </div>
+                
+                
+                <div class="form__group">
+                  <label for="name" class="form__label">Cantão/Distrito</label>
+                <select type="text"  class="form__input" id="cidade" name="distrito"  required="" style="width: 250px;margin: auto;">
+                    <option style="display: none;">Escolhe...</option>
+                    <% if (results2.length > 0) {%>
+                        <% results2.forEach((result2, index) => { %>
+                      <option class="" value="<%= result2.id %>"><%= result2.distrito %></option>
+  
+                      <% }) %>
+                      <% } %>
+                      <% if (results.length > 0) {%>
+                        <% results.forEach((result, index) => { %>
+                      <option class="" value="<%= result.id %>"><%= result.distrito_name %></option>
+                      
+                      <% }) %>
+                      <% } else { %>
+                      <% } %>
+                </select>
+                </div>  
+          
+                  <div class="form__group">
+                      <label for="name" class="form__label">Rua</label>
+                      <input type="text" class="form__input" id="rua"value="<%= player.rua %>" name="rua"   style="width: 250px;font-family:Arial, FontAwesome;margin: auto;"  required="" />
+                       
+                  </div>
+                  <div class="form__group">
+                      <label for="name" class="form__label">Código Postal</label>
+                      <input type="text" class="form__input" id="codpos" value="<%= player.codpos %>" name="codpos"   style="width: 250px;font-family:Arial, FontAwesome;margin: auto;"  required="" />
+                       
+                  </div>
+                  
+                  
+                  <div class="form__group" id="addDescricaoEmpresa">
+                    <label for="name" class="form__label" style="margin-left: 90px;">Aprensetação 1º parágrafo</label>
+                    <textarea type="text" class="form__input" id="descricao" name="descricao" placeholder=""  style="width: 80%;font-family:Arial, FontAwesome;margin: auto;height: 110px;"  required="" ><%= player.descricao %></textarea>
+                    
+                </div>
+                <div class="form__group" id="addDescricaoEmpresa">
+                  <label for="name" class="form__label" style="margin-left: 90px;">Apresentação 2 parágrafo</label>
+                  <textarea type="text" class="form__input" id="descricao" name="descricao2" placeholder=""  style="width: 80%;font-family:Arial, FontAwesome;margin: auto;height: 110px;"   ><%= player.descricao2 %></textarea>
+                  
+              </div>
+              <div class="form__group" id="addDescricaoEmpresa">
+                <label for="name" class="form__label" style="margin-left: 90px;">Aprensetação 3º parágrafo</label>
+                <textarea type="text" class="form__input" id="descricao" name="descricao3" placeholder=""  style="width: 80%;font-family:Arial, FontAwesome;margin: auto;height: 110px;"   ><%= player.descricao3 %></textarea>
+                
+            </div>
+                
+                    
+                  <div class="form__group1" id="bt1nadd">
+                    <input type="submit" id="btnadd1" class="form__inpu1t"  value="Adicionar"   style="justify-content: center;">
+                    </div>
+            </div>
+        </form>
+        <% }) %>
+
+      
+       
+       <% } else { %>
+         <p class="text-center">Não encontramos empresas <a href="/index" >Aqui</a> para voltar atrás.</p>
+       <% } %>
+    </div>
+    </div>
+</div>
+<% include footer.ejs %> 

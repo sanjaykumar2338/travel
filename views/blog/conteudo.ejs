@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165286586-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-165286586-1');
+</script>
+
+    <title> <%= result.blog_title %></title>
+  <meta charset="UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content= "<%= result.blog_desc %>">
+  <meta property="og:description "      content="<%= result.blog_desc %>" />
+ 
+  <link rel="image_src" href="https://www.portugal-la-fora.com/uploads/blog_images/<%= result.image %>"/>
+  <meta property="og:image"         content="https://www.portugal-la-fora.com/uploads/blog_images/<%= result.image %>" />
+
+
+
+  <link href="/blog/resources/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/resources/css/empresas.css">
+  <link rel="stylesheet" type="text/css" href="/resources/css/conteudo.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <script type="text/javascript"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Oswald:wght@500&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script data-ad-client="ca-pub-1839405568230983" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <link rel="icon" type="image/png" sizes="32x32" href="/resources/favicon/favicon-32x32.png">
+
+</head>
+<body>
+  <header>
+    <div class="content" id="navbar" style="width: 100%;">
+        <div id="logo">
+          <a href="/" style="text-decoration: none;"> <img  src="/resources/images/Color logo - no background.png"> </a>
+       </div>
+    
+       <div class="tutorial" id="dropmenu" style="position: relative;">
+        <ul id="dropdown">
+            
+            <li><a >Empresas </i></a>
+                <ul>
+                  <li><a href="/empresas">Empresas</a> </li>
+                  <li><a href="/charge"> Adicionar empresas</a></li>
+                  </ul>
+                </li>
+
+                <li><a >Empregos </i></a>
+                  <ul>
+                    <li><a href="/empregosall">Empregos</a> </li>
+                    <li><a href="#"> Adicionar empregos</a></li>
+                    </ul>
+                  </li>
+
+            <li><a >Artigos </i></a>
+            <ul>
+                    <li><a href="/artigos">Ver todos os artigos</a></li>
+                   
+                  </ul></li>
+            <li><a >Viagens </i></a>
+            <ul>
+                    <li>Sobre as nossas viagens <li></li>
+                  </ul></li>  
+            <li><a >Mais </a>
+                    <ul>
+                            <li><a href="/sobrenos"> Sobre nós</a></li>
+                              <li><a href="/contato">Contatos</a></li>
+                            
+                          </ul></li>         
+                  <li id="atuaconta"><a ><i class="fas fa-user"></i>  A tua conta </a >
+                    <ul>
+                      <li><a href="/login">Entra</a> </li>
+                      <li><a href="/signup">Registra-te</a> </li>
+                      <li><a href="/profile">O teu perfil</a></li>
+                      
+                    </ul></li>   
+
+        </ul>     
+     </div>  
+     
+      
+      <div onclick="myFunction7()" class="device" id="device">
+       <a  id="burger" class="open-main-nav">
+       <span class="burger"><i  class="fas fa-bars"></i></span></a>
+        
+       
+       
+       <nav class="main-nav" id="main-nav" >
+         
+       <ul >
+         <a href=""><span onclick="myFunction10()" id="x">X</span></a>
+       <li><a href="/index">Home </a></li>
+       <li><a href="#" onclick="myFunction1()">Empresas <i class="fas fa-chevron-down fa-xs"></i></a>
+           <ul  id="empresas" style="display:none;">
+             <li><a href="/empresas">Empresas </a> </li>
+             <li><a href="/charge"> Adicionar empresas </a></li>
+             </ul>
+           </li>
+       <li><a href="#" onclick="myFunction2()"> Transportes<i class="fas fa-chevron-down fa-xs"></i></a>
+         <ul id="empresas2">
+           <li><a href="#">Procurar Transportes</a> </li>
+         
+           
+         </ul></li>
+       <li><a href="#" onclick="myFunction3()" >Artigos<i class="fas fa-chevron-down fa-xs"></i></a>
+       <ul id="empresas3">
+               <li><a href="/artigos">Ver todos os artigos</a></li>
+              
+             </ul></li>
+       <li><a href="#" onclick="myFunction4()" >Viagens <i class="fas fa-chevron-down fa-xs"></i></a>
+       <ul id="empresas4">
+               <li>Sobre as nossas viagens <li></li>
+             </ul></li>  
+       <li><a href="#" onclick="myFunction5()" >Mais <i class="fas fa-chevron-down fa-xs"></i></a>
+               <ul id="empresas5">
+                       <li><a href="/sobrenos"> Sobre nós</a></li>
+                         <li><a href="/contato">Contatos</a></li>
+                       
+                     </ul></li>         
+             <li><a href="#" onclick="myFunction8()" ><i class="fas fa-user"></i>  A tua conta  <i class="fas fa-chevron-down fa-xs"></i></a >
+               <ul id="empresas6">
+                 <li><a href="/login">Entra</a> </li>
+                 <li><a href="/signup">Registra-te</a> </li>
+                 <li><a href="/profile">O teu perfil</a></li>
+                 
+               </ul></li> 
+               <ul id="empresas10" style="display: none;">
+                 <li>Sobre as nossas viagens </li>
+               </ul>  
+
+           </ul>   
+        </nav>
+     </div>
+       
+           <script>
+               function myFunction1() {
+                  document.getElementById("empresas").style.display =  ((empresas.style.display!='block') ? 'block' : 'none');
+                 }
+                 function myFunction2() {
+                  document.getElementById("empresas2").style.display =  ((empresas2.style.display!='block') ? 'block' : 'none');
+                 }
+                 function myFunction3() {
+                  document.getElementById("empresas3").style.display =  ((empresas3.style.display!='block') ? 'block' : 'none');
+                 }
+                 function myFunction4() {
+                  document.getElementById("empresas4").style.display =  ((empresas4.style.display!='block') ? 'block' : 'none');
+                 }
+                 function myFunction5() {
+                  document.getElementById("empresas5").style.display =  ((empresas5.style.display!='block') ? 'block' : 'none');
+                 }
+                 function myFunction8() {
+                  document.getElementById("empresas6").style.display =  ((empresas6.style.display!='block') ? 'block' : 'none');
+                 }
+                 function myFunction7() {
+                  document.getElementById("main-nav").style.display =  ((empresas10.style.display!='block') ? 'block' : 'none');
+                 }
+                 function myFunction10() {
+                   var x = document.getElementById("main-nav");
+                 if (x.style.display === "block") {
+                  x.style.display = "none";
+                     } else {
+                 x.style.display = "block";
+                   }
+                   }
+                
+
+
+                 function myFunction9(x) {
+ if (x.matches) { // If media query matches
+   document.getElementById("burger44").style.display = "block";
+ } else {
+   document.getElementById("burger44").style.display = "none";
+ }
+}
+
+var x = window.matchMedia("(max-width: 1000px)")
+myFunction(x) // Call listener function at run time
+x.addListener(myFunction9) 
+
+
+             </script>
+
+       <style>
+         #logo img{width: 17%;height:40px ; position: absolute; margin-top: -20px;margin-left: -105px;}
+         #device ul a{
+           text-decoration: none;
+           color: white;
+           
+         }
+         #main-nav ul li a{
+           line-height: 50px;
+           font-size: 25px;
+           margin-left: 10px;
+           
+         }
+        
+        
+         #device ul{
+           float: left;
+         list-style: none;
+         width: 100%;
+         margin-left:-310px ;
+         position: fixed;
+         background-color: rgb(87, 86, 86);
+         height: 100%;
+       }
+
+         #device{
+         display: none;
+         margin: auto;
+         justify-content: center;
+        
+         }
+         .burger{
+           margin: auto;
+           justify-content: center;
+
+         }
+         .burger i{font-size:30px ;
+         margin: auto;
+         position: fixed;
+         justify-content: center;
+       margin-top: -10px;
+     margin-left: -10%;}
+     .burger i:hover{
+       cursor: pointer;
+     }
+
+
+         #main-nav {
+           display:none;
+          position: relative;
+           padding-top: 0px;
+           background-color: rgb(102, 102, 102);
+           height: 700px;
+           
+           margin-top: -10px;
+           list-style: none;
+           
+         }
+         #x{ color: white;
+         font-size: 34px;}
+
+          #main-nav ul li ul {
+           display: none;
+            margin-left: 20px;
+            
+           border: #9da1a1;
+                border-top-style: solid;
+           border-width: thin;
+             border-bottom-style:solid ;
+           padding-bottom: -20px;
+               margin-bottom: 10px;
+           height: fit-content;
+
+           }
+           #main-nav ul li ul {
+             margin-left: -40px;
+
+            
+            color: rgb(218, 216, 216);
+
+           }
+           .empresasBusca{display:none;}
+            
+            .empresasBusca{
+               background-color:rgb(141, 137, 137); 
+                text-decoration: none;
+               }
+
+               .empresasBusca:hover{
+              cursor: pointer;
+                           background-color: rgb(128, 126, 126);
+                   }
+                   .sideBar2{display:none;}
+                   #sidebarartigos2{display: none;}
+                  footer{margin-top: -150px;}
+                 
+
+
+
+
+
+        /* Main menu positionning */
+        @media all and  (max-width: 1000px) {
+          #device{
+          display: block;
+          }
+          #logo img{width: 18%;height:38px ; position: absolute; margin-top: -20px;margin-left: 5%;}
+         
+        
+         }
+         @media all and  (max-width: 950px) {
+           .empresasBusca{display:contents;}
+           #logo img{width: 36%;height:40px ; position: absolute; margin-top: -20px;margin-left: 5%;}
+         
+           
+           .sidebarpublicidade2{display: block;}
+           #sidebarartigos2{display: block;}
+           .sideBar2{display: block;
+           }
+           .sidebarpublicidade{display: none;}
+           #sidebarartigos{display: none;}
+           .burger i{
+            margin-left: 30px;
+          }
+          main{
+            min-height:100% ;
+            margin: 10px;
+          }
+          #logo{margin-left: 20px;}
+          
+             footer{
+               position: relative;
+               margin-top: 1550px;
+               z-index: 98;
+             bottom: 0;
+             }
+          
+          #device{
+          display: block;
+          margin: auto;
+          float: right;
+          }
+          #navbar{
+            max-width: 950px;
+          }
+          #main-nav{overflow: hidden; }
+          #contactos{
+            display: none;
+            
+          }
+
+          }
+          @media all and  (max-width: 950px) {
+            #device ul{margin-left: -210px;
+           }
+          .burger i{
+            margin-left: 30px;
+          }
+          .comentariosIndex{
+            display: block; width: 100%;}
+          }
+         
+          @media  (max-width: 950px) {
+        .empresasMain{
+             display: block;
+             margin: auto;
+                       }
+         .destaque1{ display: block;}
+         .rightcards{display: none;}
+       }
+        @media  (max-width: 650px) {
+         #logo img{width: 48%;height:50px ; position: absolute; margin-top: -20px;margin-left: 0;}
+         .burger i{
+            margin-left: 100px;
+          }
+         
+       }
+
+
+         </style>
+      
+        <div id="contactos">
+           
+        </div>
+    </div>
+</header>  
+<script>let burger = document.getElementById('burger'),
+  nav    = document.getElementById('main-nav'),
+  slowmo = document.getElementById('slowmo');
+
+burger.addEventListener('click', function(e){
+ this.classList.toggle('is-open');
+ nav.classList.toggle('is-open');
+});
+
+slowmo.addEventListener('click', function(e){
+ this.classList.toggle('is-slowmo');
+});
+
+/* Onload demo - dirty timeout */
+let clickEvent = new Event('click');
+
+window.addEventListener('load', function(e) {
+ slowmo.dispatchEvent(clickEvent);
+ burger.dispatchEvent(clickEvent);
+ 
+ setTimeout(function(){
+   burger.dispatchEvent(clickEvent);
+   
+   setTimeout(function(){
+     slowmo.dispatchEvent(clickEvent);
+   }, 3500);
+ }, 5500);
+});</script>
+
+<div class="empresasMain" style="margin-top: 60px;" >
+
+<style>
+   footer{margin-top: 60px;}
+  .container2{width: 70%; margin:auto;}
+  .conteudoShow img{width: 800px;height:450px; margin: auto;}
+  @media all and  (max-width: 750px) {
+    .sideBar{display: none;}
+    .conteudoShow img{height: 200px; width: 95%;margin-top: 30px;}
+    .conteudoShow .title{
+      width: 93%; }
+      .title h2{font-size: 20px;height: fit-content; padding-top: 20px;}
+      .conteudoShow .conteudo3{width: 96%;}
+      .conteudo3{margin: 10px;}
+      .container2{width: 97%; margin:auto; margin-top: 45px;}
+      .date1{margin-top: -50px;margin-left: 10px; }
+      .footer{ height: 230px;margin-top: -50px; 
+  line-height: 15px;}      
+  .footer li{
+    padding-bottom: 20px;}    
+    .subtitle{margin: 10px;}           
+  
+  }
+</style>
+<div class="sideBar" style="margin-top: -50px;">
+   <div class="empresasWorkSearch1" style=" height: 130px; padding-top: 10px; width: 98%; margin-left: 0; margin-bottom: 10px; margin-top: 50px; " >
+      <div class="workSearchTitle">
+        <a href="/empresas">
+        <h3>Transportes </h3>
+        <p>Portugal <i class="fas fa-arrows-alt-h"></i>   Suiça</p>
+        <h1><i class="fas fa-search"></i></h1>
+      </a>
+      </div>
+      
+    </div>  
+      
+    
+   
+    <br>
+    
+    <div class="sidebarpublicidade" style="margin-bottom: 15px;">
+     <img style="width: 98%;height: 240px;" src="/assets/img/Rebeka_Collier54@yahoo.com.jpeg"/>
+     <h2 style="position: absolute; margin-top: -250px;width: 200px;color: white;margin-left: 50px;">Espaço para publicidade</h2>
+   </div>
+ 
+   <section id="sidebarartigos" class="cards-wrapper">
+    <% if (sidenews.length > 0) {%>
+      <% sidenews.forEach((sidenew, index) => { %>
+    
+   
+     <div class="sidenewcard">
+      <a href="./conteudo?id=<%= sidenew.id %>"> <div class="imgside">
+         <img src="/uploads/blog_images/<%= sidenew.image %>" alt="">
+       </div>
+       <div class="date"><%= sidenew.created_at.toDateString() %></div>
+       <p  ><%= sidenew.blog_title %></p>
+       <div class="tag" style="font-weight: 600px;"><h4>Artigos</h4></div>
+
+     </div></a>
+    
+      <style>
+        .sidenewcard{
+          position: relative;
+        }
+        .sidenewcard:hover{
+          filter: brightness(150%);
+          opacity: 0.9;
+        }
+        .imgside img{
+          height: 250px;
+          width: 97%;
+          position: relative;
+          filter: brightness(50%);
+        }
+        .sidenewcard .date{
+          position:absolute;
+          top: 8px;
+           right: 16px;
+           color:white;
+           font-size: 12px;
+        }
+                           
+           .sidenewcard p{
+             color:white;
+             position: absolute;
+             top: 35%;
+             left: 5%;
+            
+            font-size: 20px;
+           }
+           .sidenewcard .tag{
+            color:white;
+             position: absolute;
+             bottom: 8px;
+                 left: 16px;
+                 background-color: grey;
+                 padding:13px;
+                 border-radius:5px;
+                 font-weight: 600px;
+                 font-family: 'Open Sans', sans-serif;
+                 line-height: 0px;
+                 padding-top: 0px;
+                 padding-bottom: 1px;
+                
+                 
+
+           }
+      </style>
+    <% }) %>
+
+    <!-- https://images.unsplash.com/photo-1520839090488-4a6c211e2f94?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=38951b8650067840307cba514b554ba5&auto=format&fit=crop&w=1350&q=80 -->
+  </section>
+   
+   <% } else { %>
+     <p class="text-center">Não encontramos noticias <a href="/empresas" >Aqui</a> para voltar atrás.</p>
+   <% } %>
+ 
+   </div>
+<div class="conteudoShow">
+       <div class="container2" >
+        <div class="imagem" style="margin: auto; text-align: center;"><img   src="../uploads/blog_images/<%= result.image %>" alt=""></div>
+       
+        <div class="title" style="color: black;"><h2 style="color: black; float: left;"><%= result.blog_title %></h2></div>
+       <br><br>
+       <div class="date1" ><h5   style="float: left;"><i style="color: gray;" class="far fa-calendar-alt"></i>	<%
+        var split = result.created_at.split('-');
+        var dte = split[2].split('T')[0]+'-'+split[1]+'-'+split[0];
+        %>
+        <%= dte %> &nbsp  &nbsp <i style="color: gray;" class="fas fa-tags"> </i>  <%= result.category_name %></h5> </div>
+       
+       <div class="subtitle"><br><br><br><br><h2><%= result.blog_desc %>
+       </h2></div><br>
+        <div class="conteudo3" style="line-height: 30px ;">
+        <br>
+       
+    <%- result.full_description %>
+    
+    <div class="fb-share-button" style="float:right; margin-bottom:20px;height: 50px; "   data-href="https://www.portugal-la-fora.com/conteudo?id=<%= result.id %>" data-type="button_count"></div>
+   </div>
+   <br>
+
+    </div>
+    
+    <div class="artigosRecomendados" style="width: 100%;">
+      <h2 ><a href="/desporto?id=<%= result.category_id %>" style="background-color:rgb(206, 204, 204);width: 100%;"><%= result.category_name %></a> </h2>
+      <div class="line"></div>
+   </div>
+  
+
+</div>
+
+</div>
+  
+
+
+</div>
+
+<% include ../footer.ejs %> 

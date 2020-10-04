@@ -1,0 +1,41 @@
+{
+  "name": "mqsql-crud-app",
+  "version": "1.0.0",
+  "description": "\"# node-mysql-crud-app\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.5",
+    "ejs": "^2.7.4",
+    "express": "^4.17.1",
+    "express-fileupload": "^0.4.0",
+    "express-session": "^1.17.1",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.3",
+    "paginationjs": "^2.1.5",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "pm2": "^4.4.0",
+    "req-flash": "0.0.3",
+    "session-file-store": "^1.4.0",
+    "strip": "^3.0.0",
+    "stripe": "^8.97.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/achowba/node-mysql-crud-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/achowba/node-mysql-crud-app/issues"
+  },
+  "homepage": "https://github.com/achowba/node-mysql-crud-app#readme"
+}

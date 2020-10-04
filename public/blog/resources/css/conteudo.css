@@ -1,0 +1,54 @@
+.conteudoShow{
+    background-color: rgb(243, 239, 239);
+    color: black;
+    margin: auto;
+    text-align: center;
+}
+.artigosShow{
+    grid-column: 2/2;
+    background-color: rgb(243, 239, 239);
+    display: grid;
+  grid-template: repeat (8, 40px 350px 40px 350px 40px 350px 40px 350px) / repeat(3, 1fr);
+     row-gap: 10px;
+     column-gap: 0px;
+     justify-content: space-between;
+     overflow: hidden;
+     padding-left: 170px;
+     
+    height: fit-content;
+}
+ 
+.titleTodosArtigos{
+    grid-column: 1/4;
+    height: 50px;
+    width: 70%;
+   text-align: center;
+   text-decoration: none;
+}
+.titleTodosArtigos a{
+    text-decoration: none;
+    color: black;
+}
+.titleTodosArtigos2 a{
+    text-decoration: none;
+    color: black;
+}
+
+.titleTodosArtigos2{
+    margin-top: -150px;
+    grid-column: 1/4;
+    height: 50px;
+    width: 70%;
+   
+}
+#line2{
+    margin-top: 80px;
+}
+.card{
+    width: 380px;
+}
+.tituloDesporto{
+    grid-column: 1/4;
+    height: 50px;
+}
+

@@ -1,0 +1,152 @@
+<% include partials/header.ejs %>
+<style>
+   footer{margin-top: 30px;}
+.boxes{display: inline-flex; justify-content: space-around; width: 100%;}
+.sketchy{ width: 45%;line-height: 20px;}
+#caixa2{width:50%;}
+@media all and  (max-width: 750px) {
+  .sideBar{display: none;}
+  .boxes{display: block; margin: 0%; padding-bottom: 20px;}
+  .sketchy{width: 100% ;}
+  #caixa2{width: 100%;}
+  #frase5{font-size: 14px;}
+  footer{ margin-top: 10px;}
+  .footer{ height: 200px; 
+  line-height: 15px;}      
+  .footer li{
+    padding-bottom: 20px;}   
+}</style>
+<div class="empresasMain">
+    <div class="sideBar" style="margin-top: 10px;">
+        <div class="empresasWorkSearch1" style=" height: 130px; padding-top: 10px; width: 98%; margin-left: 0; margin-bottom: 10px; margin-top: 50px; " >
+           <div class="workSearchTitle">
+             <a href="/empresas">
+             <h3>Transportes </h3>
+             <p>Portugal <i class="fas fa-arrows-alt-h"></i>   Suiça</p>
+             <h1><i class="fas fa-search"></i></h1>
+           </a>
+           </div>
+           
+         </div>  
+           
+         
+        
+         <br>
+         
+         <div class="sidebarpublicidade" style="margin-bottom: 15px;">
+          <img style="width: 98%;height: 240px;" src="/assets/img/Rebeka_Collier54@yahoo.com.jpeg"/>
+          <h2 style="position: absolute; margin-top: -250px;width: 200px;color: white;margin-left: 50px;">Espaço para publicidade</h2>
+        </div>
+      
+        <section id="sidebarartigos" class="cards-wrapper">
+          <% if (sidenews.length > 0) {%>
+            <% sidenews.forEach((sidenew, index) => { %>
+          
+         
+           <div class="sidenewcard">
+            <a href="./conteudo?id=<%= sidenew.id %>"> <div class="imgside">
+               <img src="/uploads/blog_images/<%= sidenew.image %>" alt="">
+             </div>
+             <div class="date"><%= sidenew.created_at.toDateString() %></div>
+             <p  ><%= sidenew.blog_title %></p>
+             <div class="tag" style="font-weight: 600px;"><h4>Artigos</h4></div>
+      
+           </div></a>
+          
+            <style>
+              .sidenewcard{
+                position: relative;
+              }
+              .sidenewcard:hover{
+                filter: brightness(150%);
+                opacity: 0.9;
+              }
+              .imgside img{
+                height: 250px;
+                width: 97%;
+                position: relative;
+                filter: brightness(50%);
+              }
+              .sidenewcard .date{
+                position:absolute;
+                top: 8px;
+                 right: 16px;
+                 color:white;
+                 font-size: 12px;
+              }
+                                 
+                 .sidenewcard p{
+                   color:white;
+                   position: absolute;
+                   top: 35%;
+                   left: 5%;
+                  
+                  font-size: 20px;
+                 }
+                 .sidenewcard .tag{
+                  color:white;
+                   position: absolute;
+                   bottom: 8px;
+                       left: 16px;
+                       background-color: grey;
+                       padding:13px;
+                       border-radius:5px;
+                       font-weight: 600px;
+                       font-family: 'Open Sans', sans-serif;
+                       line-height: 0px;
+                       padding-top: 0px;
+                       padding-bottom: 1px;
+                      
+                       
+      
+                 }
+            </style>
+          <% }) %>
+      
+          <!-- https://images.unsplash.com/photo-1520839090488-4a6c211e2f94?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=38951b8650067840307cba514b554ba5&auto=format&fit=crop&w=1350&q=80 -->
+        </section>
+        
+        <% } else { %>
+          <p class="text-center">Não encontramos noticias <a href="/empresas" >Aqui</a> para voltar atrás.</p>
+        <% } %>
+      
+        </div>
+<div style="background-color: white;">
+<div class="contatoMenu" style="width: 85%; margin: auto; margin-top: 70px;background-color: white; ">
+    <div class="titleSobrenos" ><h2>Portugal Lá fora</h2></div>
+    <div class="subtitleSobrenos" style="color: rgb(169, 169, 170);"><h2>A Plataforma dos emigrantes Portugueses na Suiça</h2></div>
+    <div class="boxes" >
+        <div class="sketchy" >
+            <br>
+            <h4><i class="far fa-envelope"></i></h4>
+        <h4>portugallafora@gmail.com</h4><br><br>
+        <h4><i class="fas fa-phone-alt"></i></h4>
+        <h4>0789349403</h4><br><br>
+        <h4><i class="fa fa-facebook fa-lg"></i></h4>
+        <h4><a id="frase5" style="color: black;" href="https://web.facebook.com/portugal.lafora.9"> https://web.facebook.com/portugal.lafora.9</a></h4>
+        </div>
+        <div class="sketchy" id="caixa2" >
+            <h3 style="margin: auto; margin-left: 40px;">contata-nos</h3>
+            <form action="" method="post">
+            <div class="form__group" id="sobrenosContato" >
+                <input type="text" class="form__input" id="codpos" name="nome" placeholder="O teu nome... "  style="width: 75%;font-family:Arial, FontAwesome;margin: auto;"  required="" />
+                 
+            </div><br>
+            <div class="form__group" id="sobrenosContato">
+                <input type="text" class="form__input" id="codpos" name="email" placeholder="O teu email... "  style="width: 75%;font-family:Arial, FontAwesome;margin: auto;"  required="" />      
+            </div><br>
+              
+              <div class="form__group" id="sobrenosContato">
+                  <textarea type="text" class="form__input" id="descricao" name="mensagem" placeholder="Mensagem... "  style="width: 75%;font-family:Arial, FontAwesome;margin: auto;height: 110px;"  required="" ></textarea>
+              </div>
+              <br>
+              <div class="form__group" id="btnadd" style="width: 30%; border-radius: 5px;">
+                <input style="width: 80%; border-radius: 5px;" type="submit" id="btnadd" class="form__input"  value="Enviar"  >
+                </div></form>
+        </div>
+    </div>
+
+</div>
+</div></div></div>
+
+<% include footer.ejs %>
